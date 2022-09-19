@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Rodrigo Franco's Notes — Recently Read/Database</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -21,157 +21,365 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/typebase.min.css" type="text/css" />
-    <link rel="stylesheet" href="/microtip.min.css" type="text/css" />
-	<link rel="stylesheet" href="/style.css" type="text/css" />
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+    <link rel="stylesheet" href="/typebase.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/microtip.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/style.css" type="text/css"/>
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml"/>
     <!--<script src="/createBreadcrumbs.js"></script>-->
-     <script>
-        var Hyphenopoly = {
-            require: {
-                "en-us": "Supercalifragilisticexpialidocious"
-            },
-            setup: {
-                selectors: {
-                    ".main": {}
-                }
-            }
-        };
-        </script>
-        <script src="./Hyphenopoly_Loader.js"></script>
-    	<style>
-          .main {
-          	hyphens: auto;
+    <script>
+      var Hyphenopoly = {
+        require: {
+          "en-us": "Supercalifragilisticexpialidocious"
+        },
+        setup: {
+          selectors: {
+            ".main": {}
+          }
+        }
+      };
+    </script>
+    <script src="./Hyphenopoly_Loader.js"></script>
+    <style>
+        .main {
+            hyphens: auto;
             -ms-hyphens: auto;
             -moz-hyphens: auto;
             -webkit-hyphens: auto;
-          }
-           li, p {
-           	text-align: justify;
-          }
-	    </style>
-  <style>
-.rm-highlight {
-  background-color: hsl(51, 98%, 81%);
-  margin: -2px;
-  padding: 2px;
-}
-.rm-bold {
-  font-weight: bold;
-}
-.document-bullet {
-  list-style: none;
-}
-td {
-  font-size: 12px;
-  min-width: 100px;
-  max-height: 20px;
-  padding: 8px 16px;
-  border: 1px solid grey;
-}
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-</style>
+        }
+
+        li, p {
+            text-align: justify;
+        }
+    </style>
+    <style>
+        .rm-highlight {
+            background-color: hsl(51, 98%, 81%);
+            margin: -2px;
+            padding: 2px;
+        }
+
+        .rm-bold {
+            font-weight: bold;
+        }
+
+        .document-bullet {
+            list-style: none;
+        }
+
+        td {
+            font-size: 12px;
+            min-width: 100px;
+            max-height: 20px;
+            padding: 8px 16px;
+            border: 1px solid grey;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <!-- cover styles -->
+    <style>
+        .cover {
+            padding:  0px !important;
+            margin:  0px !important;
+            width: fit-content;
+            display: inline-flex !important;
+            margin-right: 10px !important;
+            cursor: pointer;
+        }
+
+        .cover img {
+            width: 100px;
+            height: 157px;
+            margin: 0px !important;
+            padding: 0px !important;
+            border: 1px solid var(--divider-color);
+            border-radius: 5px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,.11));
+            -webkit-filter: drop-shadow(0 2px 8px rgba(0,0,0,.11));
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        .cover img:hover  {
+            -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+        }
+
+
+        /* tooltips  */
+        .cover > .tooltip {
+            display: none;
+            position: relative;
+        }
+
+        /* Tooltip Hover CSS Begin */
+        .cover > .tooltip > ul{
+            margin: 0px;
+            padding: 0px;
+            padding-left: 10px;
+        }
+
+        .cover > .tooltip > ul > li {
+            line-height: 20px;
+            text-align: left;
+        }
+
+        .cover > .tooltip > ul > li:first-child{
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .cover:hover > .tooltip {
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 18.5rem;
+            margin-left: 20px;
+            width: auto;
+            padding-right: 10px;
+            background: var(--bg-color);
+            border: 1px solid var(--divider-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            font-size: 75%;
+        }
+        /* Tooltip CSS End */
+    </style>
 </head>
 
-  <body>
-    <header>
-      <a href="/"><h1><div class="back-arrow"></div>Home</h1></a>
-      <div>
+<body>
+<header>
+    <a href="/">
+        <h1>
+            <div class="back-arrow"></div>
+            Home
+        </h1>
+    </a>
+    <div>
         <a href="/">About</a>
         <a href="/Now.html">Now</a>
         <a href="/Personal_Projects.html">Projects</a>
         <a href="/Primary_Interests.html">Interests</a>
-      </div>
-	</header>
-    <section class="main">
-     <article data-page="Recently Read/Database">
-       <h1 data-title="Recently Read/Database">Recently Read/Database</h1>
-	   <ul><li id="gXcv63mQ-"><h1>2022</h1>
-<ul><li id="K3vc1pp-v"><h3>September</h3>
-<ul><li id="faTOkUjrl"><p><span class="rm-bold">bookcover:</span> 9781782395171</p>
-<ul><li id="b-m8Lo6Jm"><p><a href="https://www.amazon.com/Ajax-Penumbra-1969-Kindle-Single-ebook/dp/B00EWZC8QI/">Amazon.com: Ajax Penumbra 1969 </a></p>
-<ul><li id="P7WxDR_F_"><p>Lovely prequel to Penumbra&#39;s Bookstore.  Makes you want more and more.</p>
-</li></ul></li></ul></li></ul></li>
-<li id="Fci5c4yZm"><h3>August</h3>
-<ul><li id="wmQ8vxVQn"><p><span class="rm-bold">bookcover:</span> 9781250037756</p>
-<ul><li id="Ix0jgx_AW"><p><a href="https://bookshop.org/books/mr-penumbra-s-24-hour-bookstore/9781250037756">Mr. Penumbra&#39;s 24-Hour Bookstore</a></p>
-<ul><li id="MG8v4EBur"><p>Re-reading it as part of my <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></p>
-</li></ul></li></ul></li>
-<li id="sYGNQAjQu"><p><span class="rm-bold">bookcover:</span> 9781737930600</p>
-<ul><li id="uZFkcQ2WI"><p><a href="https://bookshop.org/books/lenormand-basics-how-to-read-lenormand-cards-for-beginners/9781737930600">Lenormand Basics: How to Read Lenormand Cards for Beginners</a></p>
-<ul><li id="XUSAoLPp_"><p>Dipping my toes on <a href="/Lenormand.html">Lenormand</a>.</p>
-</li></ul></li></ul></li>
-<li id="OwzJrIPLf"><p><span class="rm-bold">bookcover:</span> 9781542027151</p>
-<ul><li id="YESL94mul"><p><a href="https://bookshop.org/books/the-easy-life-in-kamusari-9781542027168/9781542027151">The Easy Life in Kamusari</a></p>
-<ul><li id="s39_KBYiz"><p>Really enjoyed this one.  A classic <a href="/Japanese_books_about_nothing.html">Japanese books about nothing</a>.</p>
-</li></ul></li></ul></li>
-<li id="xhqvrADUE"><p><span class="rm-bold">bookcover:</span> 9780307475299</p>
-<ul><li id="fbYeCaU5J"><p><a href="https://en.wikipedia.org/wiki/Tokyo_Vice">Tokyo Vice</a></p>
-<ul><li id="0dU_TREXE"><p>Dropped in the middle. May revisit in the future.</p>
-</li></ul></li></ul></li></ul></li>
-<li id="1UAzU5mlL"><h3>July</h3>
-<ul><li id="gI-w8Saj1"><p><span class="rm-bold">bookcover:</span> 978-8590379867</p>
-<ul><li id="cG9EdS3WL"><p><a href="http://www.lua.org/pil/">Programming in Lua</a></p>
-</li></ul></li>
-<li id="oM2ttnmfO"><p><span class="rm-bold">bookcover:</span> 9781543057423</p>
-<ul><li id="tGNy2q-PN"><p><a href="https://www.publishersweekly.com/9781543057423">The Ginza Ghost</a> </p>
-<ul><li id="0ZIm0J-Tj"><p>Read almost until the end, but got tired of it. Formulaic.</p>
-</li></ul></li></ul></li></ul></li>
-<li id="qRxEvDvFa"><h3>May</h3>
-<ul><li id="PiCK11Lxn"><p>9780060516239</p>
-<ul><li id="AlOsCoAAM"><p><a href="https://www.thriftbooks.com/w/dreaming-pachinko_isaac-adamson/741043/#edition=57154867&amp;idiq=46529309">Dreaming Pachinko</a></p>
-<ul><li id="1B2P4Wc9j"><p>Lovely Billy Chaka book. Always a pleasure.</p>
-</li></ul></li></ul></li>
-<li id="gwHCiUTCk"><p>9781101911952</p>
-<ul><li id="gFOlriQuf"><p><a href="http://www.emilymandel.com/montreal.html">Last Night in Montreal</a></p>
-</li></ul></li></ul></li>
-<li id="9cVGyB-w2"><h3>April</h3>
-<ul><li id="oRRbSD3PI"><p><span class="rm-bold">bookcover:</span> 9781476716763</p>
-<ul><li id="i80bo03i5"><p><a href="https://jenniferegan.com/books/the-candy-house/">The Candy House</a></p>
-<ul><li id="QnSib5Vj_"><p>Not as good as &quot;A Visit from the Goon Squad&quot;.</p>
-</li></ul></li></ul></li>
-<li id="VA8k4gHJE"><p><span class="rm-bold">bookcover:</span> 9780307477477</p>
-<ul><li id="OlqVmH_3W"><p><a href="https://en.wikipedia.org/wiki/A_Visit_from_the_Goon_Squad">A Visit from the Goon Squad</a> </p>
-<ul><li id="buLegOs1T"><p>Amazing. Loved this one so much. Engrossing characters,  dark and funny at the same time. A favorite.</p>
-</li></ul></li></ul></li>
-<li id="6TDAx3Efn"><p><span class="rm-bold">bookcover:</span> 9780593231463</p>
-<ul><li id="vpbllIFk8"><p><a href="https://www.katefolk.com/">Out There</a></p>
-<ul><li id="bL7xhXrGf"><p>Black Mirror vibes. Loved it.</p>
-</li></ul></li></ul></li></ul></li></ul></li>
-<li id="UyHmTYt_2"><h1>2021</h1>
-<ul><li id="gSzOUXtLh"><h3>December</h3>
-<ul><li id="gSMImXvHy"><p><span class="rm-bold">bookcover:</span> 9780374602574</p>
-<ul><li id="TJklCHeVL"><p><a href="https://us.macmillan.com/books/9780374602581/laserwriterii">LaserWriter II</a></p>
-<ul><li id="kszvu2Q4L"><p>Dropped. I wasn't in the proper mental state to read it, I think. Will try again as part of the <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></p>
-</li></ul></li></ul></li></ul></li></ul></li></ul>
-      </article>
-    </section>
-    <section class="references">
-		<header>
-        	<h3>Page References</h3>
-            <button 
-              aria-label="Pages (on this website) that links to this"
-              role="tooltip" 
-              data-microtip-position="top-left"
-              data-microtip-size="medium"
-              class="button"
-              >?</button>
-      </header>
-      <ul>
+    </div>
+</header>
+<section class="main">
+    <article data-page="Recently Read/Database">
+        <h1 data-title="Recently Read/Database">Recently Read/Database</h1>
+        <ul>
+            <li id="gXcv63mQ-"><h1>2022</h1>
+                <ul>
+                    <li id="K3vc1pp-v"><h3>September</h3>
+                        <ul>
+                            <li id="faTOkUjrl"><p><span class="rm-bold">bookcover:</span> 9781782395171</p>
+                                <ul>
+                                    <li id="b-m8Lo6Jm"><p><a
+                                            href="https://www.amazon.com/Ajax-Penumbra-1969-Kindle-Single-ebook/dp/B00EWZC8QI/">Amazon.com:
+                                        Ajax Penumbra 1969 </a></p>
+                                        <ul>
+                                            <li id="P7WxDR_F_"><p>Lovely prequel to Penumbra&#39;s Bookstore. Makes you
+                                                want more and more.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="Fci5c4yZm"><h3>August</h3>
+                        <ul>
+                            <li id="wmQ8vxVQn"><p><span class="rm-bold">bookcover:</span> 9781250037756</p>
+                                <ul>
+                                    <li id="Ix0jgx_AW"><p><a
+                                            href="https://bookshop.org/books/mr-penumbra-s-24-hour-bookstore/9781250037756">Mr.
+                                        Penumbra&#39;s 24-Hour Bookstore</a></p>
+                                        <ul>
+                                            <li id="MG8v4EBur"><p>Re-reading it as part of my <a
+                                                    href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a>
+                                            </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="sYGNQAjQu"><p><span class="rm-bold">bookcover:</span> 9781737930600</p>
+                                <ul>
+                                    <li id="uZFkcQ2WI"><p><a
+                                            href="https://bookshop.org/books/lenormand-basics-how-to-read-lenormand-cards-for-beginners/9781737930600">Lenormand
+                                        Basics: How to Read Lenormand Cards for Beginners</a></p>
+                                        <ul>
+                                            <li id="XUSAoLPp_"><p>Dipping my toes on <a
+                                                    href="/Lenormand.html">Lenormand</a>.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="OwzJrIPLf"><p><span class="rm-bold">bookcover:</span> 9781542027151</p>
+                                <ul>
+                                    <li id="YESL94mul"><p><a
+                                            href="https://bookshop.org/books/the-easy-life-in-kamusari-9781542027168/9781542027151">The
+                                        Easy Life in Kamusari</a></p>
+                                        <ul>
+                                            <li id="s39_KBYiz"><p>Really enjoyed this one. A classic <a
+                                                    href="/Japanese_books_about_nothing.html">Japanese books about
+                                                nothing</a>.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="xhqvrADUE"><p><span class="rm-bold">bookcover:</span> 9780307475299</p>
+                                <ul>
+                                    <li id="fbYeCaU5J"><p><a href="https://en.wikipedia.org/wiki/Tokyo_Vice">Tokyo
+                                        Vice</a></p>
+                                        <ul>
+                                            <li id="0dU_TREXE"><p>Dropped in the middle. May revisit in the future.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="1UAzU5mlL"><h3>July</h3>
+                        <ul>
+                            <li id="gI-w8Saj1"><p><span class="rm-bold">bookcover:</span> 978-8590379867</p>
+                                <ul>
+                                    <li id="cG9EdS3WL"><p><a href="http://www.lua.org/pil/">Programming in Lua</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="oM2ttnmfO"><p><span class="rm-bold">bookcover:</span> 9781543057423</p>
+                                <ul>
+                                    <li id="tGNy2q-PN"><p><a href="https://www.publishersweekly.com/9781543057423">The
+                                        Ginza Ghost</a></p>
+                                        <ul>
+                                            <li id="0ZIm0J-Tj"><p>Read almost until the end, but got tired of it.
+                                                Formulaic.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="qRxEvDvFa"><h3>May</h3>
+                        <ul>
+                            <li id="PiCK11Lxn"><p>9780060516239</p>
+                                <ul>
+                                    <li id="AlOsCoAAM"><p><a
+                                            href="https://www.thriftbooks.com/w/dreaming-pachinko_isaac-adamson/741043/#edition=57154867&amp;idiq=46529309">Dreaming
+                                        Pachinko</a></p>
+                                        <ul>
+                                            <li id="1B2P4Wc9j"><p>Lovely Billy Chaka book. Always a pleasure.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="gwHCiUTCk"><p>9781101911952</p>
+                                <ul>
+                                    <li id="gFOlriQuf"><p><a href="http://www.emilymandel.com/montreal.html">Last Night
+                                        in Montreal</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="9cVGyB-w2"><h3>April</h3>
+                        <ul>
+                            <li id="oRRbSD3PI"><p><span class="rm-bold">bookcover:</span> 9781476716763</p>
+                                <ul>
+                                    <li id="i80bo03i5"><p><a href="https://jenniferegan.com/books/the-candy-house/">The
+                                        Candy House</a></p>
+                                        <ul>
+                                            <li id="QnSib5Vj_"><p>Not as good as &quot;A Visit from the Goon Squad&quot;.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="VA8k4gHJE"><p><span class="rm-bold">bookcover:</span> 9780307477477</p>
+                                <ul>
+                                    <li id="OlqVmH_3W"><p><a
+                                            href="https://en.wikipedia.org/wiki/A_Visit_from_the_Goon_Squad">A Visit
+                                        from the Goon Squad</a></p>
+                                        <ul>
+                                            <li id="buLegOs1T"><p>Amazing. Loved this one so much. Engrossing
+                                                characters, dark and funny at the same time. A favorite.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="6TDAx3Efn"><p><span class="rm-bold">bookcover:</span> 9780593231463</p>
+                                <ul>
+                                    <li id="vpbllIFk8"><p><a href="https://www.katefolk.com/">Out There</a></p>
+                                        <ul>
+                                            <li id="bL7xhXrGf"><p>Black Mirror vibes. Loved it.</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="UyHmTYt_2"><h1>2021</h1>
+                <ul>
+                    <li id="gSzOUXtLh"><h3>December</h3>
+                        <ul>
+                            <li id="gSMImXvHy"><p><span class="rm-bold">bookcover:</span> 9780374602574</p>
+                                <ul>
+                                    <li id="TJklCHeVL"><p><a
+                                            href="https://us.macmillan.com/books/9780374602581/laserwriterii">LaserWriter
+                                        II</a></p>
+                                        <ul>
+                                            <li id="kszvu2Q4L"><p>Dropped. I wasn't in the proper mental state to read
+                                                it, I think. Will try again as part of the <a
+                                                        href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse
+                                                    Tour</a></p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </article>
+</section>
+<section class="references">
+    <header>
+        <h3>Page References</h3>
+        <button
+                aria-label="Pages (on this website) that links to this"
+                role="tooltip"
+                data-microtip-position="top-left"
+                data-microtip-size="medium"
+                class="button"
+        >?
+        </button>
+    </header>
+    <ul>
         <li><a href="Website_Drafts.html" data-reference="Website Drafts">Website Drafts</a></li>
-<li><a href="Recently_ReadProject.html" data-reference="Recently Read/Project">Recently Read/Project</a></li>
-      </ul>
-    </section>
-    <footer>
-      <a href="https://merveilles.town/@caffo">Fedi</a>
-      <a href="https://webring.xxiivv.com/#random" target="_blank">Webring</a>
-      <a href="/Website_Changelog.html">Changelog</a>
-      <a href="/How_is_this_website_made.html">How?</a>
-    </footer>
-    <script src="/painter.js"></script>
-   	<script src="/references.js"></script>
-  </body>
+        <li><a href="Recently_ReadProject.html" data-reference="Recently Read/Project">Recently Read/Project</a></li>
+    </ul>
+</section>
+<footer>
+    <a href="https://merveilles.town/@caffo">Fedi</a>
+    <a href="https://webring.xxiivv.com/#random" target="_blank">Webring</a>
+    <a href="/Website_Changelog.html">Changelog</a>
+    <a href="/How_is_this_website_made.html">How?</a>
+</footer>
+<script src="/painter.js"></script>
+<script src="/references.js"></script>
+</body>
 </html>
