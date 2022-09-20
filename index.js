@@ -9,7 +9,7 @@ const imagemagick = require('imagemagick-cli');
 
 // ORCHESTRATION
 
-loadSourceFile('src/Recently_ReadDatabase.html')
+loadSourceFile('out/Recently_ReadDatabase.html')
   .then(file => parseSourceFile(file))
   .then(dom => getBookEntries(dom))
   .then(entries => getBooksData(entries))
@@ -34,18 +34,16 @@ async function parseSourceFile(file) {
 }
 
 async function getBookEntries(dom) {
-  // todo: grep 'bookcover:' instead
-
-  return dom('li > h3 ~ ul > li')
+  return dom('li > h3 ~ ul > li:has(p:has(span:contains("bookcover:")))')
 }
 
 async function getBooksData(entries) {
   return entries.map(function () {
     return {
       node: $(this).attr('id'),
-      isbn: $(this).children('p:not(:has(a))').text(),
-      title: $(this).find('p:has(a) > a').text(),
-      url: $(this).find('p:has(a) > a').attr('href'),
+      isbn: $(this).children('p:has(span:contains("bookcover:"))').text().replace('bookcover: ', '').trim(),
+      title: $(this).find('p:has(a) > a').first().text(),
+      url: $(this).find('p:has(a) > a').first().attr('href'),
       comment: $(this).find('ul > li > ul > li > p').text(),
       cover: '',
     }
@@ -54,8 +52,7 @@ async function getBooksData(entries) {
 
 async function addExistentCovers(data) {
   return data.map(function(entry) {
-    // todo: look into the repository instead
-    let path = `src/covers/${entry.isbn}.jpg`
+    let path = `out/covers/${entry.isbn}.jpg`
 
     if (fs.existsSync(path)) {
       entry.cover = path
@@ -90,7 +87,7 @@ async function getRemoteCovers(data) {
       'openLibrary.small'
     ]
 
-    let cover = "src/covers/default.jpg"
+    let cover = "out/covers/default.jpg"
 
     qualityRank.some(function(source) {
       let sourceResult = _.get(covers, source, null)
@@ -106,13 +103,13 @@ async function getRemoteCovers(data) {
 
   // download best cover
   const downloadBestCover = (isbn, cover) => {
-    if (cover === "src/covers/default.jpg") {
+    if (cover === "out/covers/default.jpg") {
       return cover
     } else {
       return new Promise((resolve) => {
-        download.image({ url: cover, dest: `${__dirname}/src/covers/${isbn}.jpg`})
+        download.image({ url: cover, dest: `${__dirname}/out/covers/${isbn}.jpg`})
           .then(({ _filename }) => {
-            resolve(`src/covers/${isbn}.jpg`)
+            resolve(`out/covers/${isbn}.jpg`)
           })
       })
     }
@@ -120,13 +117,12 @@ async function getRemoteCovers(data) {
 
   // transform cover
   const transformCover = (cover) => {
-    if (cover === "src/covers/default.jpg") {
+    if (cover === "out/covers/default.jpg") {
       return cover
     } else {
       return new Promise((resolve) => {
-        let command = `convert ${cover} -resize 100x157 -colorspace gray -ordered-dither o8x8 ${cover}`;
+        let command = `magick ${cover} -resize 100x157 -colorspace gray -ordered-dither o8x8 ${cover}`;
 
-        // todo: maybe use another action as inner step instead of a node module
         imagemagick.exec(command)
           .then(({ _stdout, stderr }) => {
             if (!stderr) {
@@ -145,7 +141,7 @@ async function getRemoteCovers(data) {
                       .then(cover => downloadBestCover(entry.isbn, cover))
                       .then(cover => transformCover(cover))
     } else if (!entry.isbn) {
-      entry.cover = 'src/covers/default.jpg'
+      entry.cover = 'out/covers/default.jpg'
     }
 
     return entry
@@ -161,7 +157,7 @@ async function buildNewMarkup(data) {
       let markup = `
         <li id='${entry.node}' style='display: inline;' lazy='loaded'>
           <div class='cover'>
-            <img src='${entry.cover.replace('src/', '')}' />
+            <img src='${entry.cover.replace('out/', '')}' />
             
             <div class='tooltip'>
               <ul>
@@ -180,11 +176,7 @@ async function buildNewMarkup(data) {
 }
 
 async function updateSourceFile(markup) {
-  fs.writeFileSync('src/Recently_ReadDatabase.html', markup.html())
+  fs.writeFileSync('out/Recently_ReadDatabase.html', markup.html())
 
   console.log("Finished 'bookcover' action.")
-}
-
-async function exportFiles() {
-  // todo: copy files to `out` directory
 }

@@ -1,0 +1,10 @@
+name: 'bookcover-action'
+description: 'Fetch, save and add book covers to RoamResearch dinamically generated page'
+
+branding:
+    icon: 'activity'
+    color: 'green'
+
+runs:
+    using: 'node16'
+    main: 'dist/index.js'
