@@ -8,7 +8,7 @@ const bookcovers = require("bookcovers");
 const download = require('image-downloader');
 const imagemagick = require('imagemagick-cli');
 
-const sourceFile = path.join('out/Recently_ReadDatabase.html')
+const sourceFile = path.join(process.env.GITHUB_WORKSPACE, 'out/Recently_ReadDatabase.html')
 
 // ORCHESTRATION
 
@@ -55,7 +55,7 @@ async function getBooksData(entries) {
 
 async function addExistentCovers(data) {
   return data.map(function(entry) {
-    let file = path.join(`out/covers/${entry.isbn}.jpg`)
+    let file = path.join(process.env.GITHUB_WORKSPACE, `out/covers/${entry.isbn}.jpg`)
 
     if (fs.existsSync(file)) {
       entry.cover = file
@@ -90,7 +90,7 @@ async function getRemoteCovers(data) {
       'openLibrary.small'
     ]
 
-    let cover = path.join('out/covers/default.jpg')
+    let cover = path.join(process.env.GITHUB_WORKSPACE, 'out/covers/default.jpg')
 
     qualityRank.some(function(source) {
       let sourceResult = _.get(covers, source, null)
@@ -110,9 +110,9 @@ async function getRemoteCovers(data) {
       return cover
     } else {
       return new Promise((resolve) => {
-        download.image({ url: cover, dest: path.join(`${__dirname}/out/covers/${isbn}.jpg`) })
+        download.image({ url: cover, dest: path.join(process.env.GITHUB_WORKSPACE, `out/covers/${isbn}.jpg`) })
           .then(({ _filename }) => {
-            resolve(path.join(`out/covers/${isbn}.jpg`))
+            resolve(path.join(process.env.GITHUB_WORKSPACE, `out/covers/${isbn}.jpg`))
           })
       })
     }
@@ -144,7 +144,7 @@ async function getRemoteCovers(data) {
                       .then(cover => downloadBestCover(entry.isbn, cover))
                       .then(cover => transformCover(cover))
     } else if (!entry.isbn) {
-      entry.cover = path.join('out/covers/default.jpg')
+      entry.cover = path.join(process.env.GITHUB_WORKSPACE, 'out/covers/default.jpg')
     }
 
     return entry
@@ -160,7 +160,7 @@ async function buildNewMarkup(data) {
       let markup = `
         <li id='${entry.node}' style='display: inline;' lazy='loaded'>
           <div class='cover'>
-            <img src='${entry.cover.replace(path.join('out/'), '')}' />
+            <img src='${entry.cover.replace(path.join(process.env.GITHUB_WORKSPACE, 'out/'), '')}' />
             
             <div class='tooltip'>
               <ul>
@@ -179,7 +179,7 @@ async function buildNewMarkup(data) {
 }
 
 async function updateSourceFile(markup) {
-  fs.writeFileSync(path.join('out/Recently_ReadDatabase.html'), markup.html())
+  fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'out/Recently_ReadDatabase.html'), markup.html())
 
   console.log("Finished 'bookcover' action.")
 }
