@@ -110,7 +110,7 @@ async function getRemoteCovers(data) {
       return cover
     } else {
       return new Promise((resolve) => {
-        download.image({ url: cover, dest: path.join(`out/covers/${isbn}.jpg`) })
+        download.image({ url: cover, dest: path.join(`${__dirname}/out/covers/${isbn}.jpg`) })
           .then(({ _filename }) => {
             resolve(path.join(`out/covers/${isbn}.jpg`))
           })
