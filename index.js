@@ -2,14 +2,17 @@
 
 const fs = require('fs');
 const _ = require('lodash');
+const path = require('path');
 const cheerio = require('cheerio');
 const bookcovers = require("bookcovers");
 const download = require('image-downloader');
 const imagemagick = require('imagemagick-cli');
 
+const sourceFile = path.join('out/Recently_ReadDatabase.html')
+
 // ORCHESTRATION
 
-loadSourceFile('out/Recently_ReadDatabase.html')
+loadSourceFile(sourceFile)
   .then(file => parseSourceFile(file))
   .then(dom => getBookEntries(dom))
   .then(entries => getBooksData(entries))
@@ -20,10 +23,10 @@ loadSourceFile('out/Recently_ReadDatabase.html')
 
 // STEPS
 
-async function loadSourceFile(path) {
+async function loadSourceFile(file) {
   console.log("Started 'bookcover' action.")
 
-  return fs.readFileSync(path, 'utf8');
+  return fs.readFileSync(file, 'utf8');
 }
 
 async function parseSourceFile(file) {
@@ -52,10 +55,10 @@ async function getBooksData(entries) {
 
 async function addExistentCovers(data) {
   return data.map(function(entry) {
-    let path = `out/covers/${entry.isbn}.jpg`
+    let file = path.join(`out/covers/${entry.isbn}.jpg`)
 
-    if (fs.existsSync(path)) {
-      entry.cover = path
+    if (fs.existsSync(file)) {
+      entry.cover = file
     }
 
     return entry
@@ -87,7 +90,7 @@ async function getRemoteCovers(data) {
       'openLibrary.small'
     ]
 
-    let cover = "out/covers/default.jpg"
+    let cover = path.join('out/covers/default.jpg')
 
     qualityRank.some(function(source) {
       let sourceResult = _.get(covers, source, null)
@@ -103,13 +106,13 @@ async function getRemoteCovers(data) {
 
   // download best cover
   const downloadBestCover = (isbn, cover) => {
-    if (cover === "out/covers/default.jpg") {
+    if (cover.includes('default.jpg')) {
       return cover
     } else {
       return new Promise((resolve) => {
-        download.image({ url: cover, dest: `${__dirname}/out/covers/${isbn}.jpg`})
+        download.image({ url: cover, dest: path.join(`${__dirname}/out/covers/${isbn}.jpg`) })
           .then(({ _filename }) => {
-            resolve(`out/covers/${isbn}.jpg`)
+            resolve(path.join(`out/covers/${isbn}.jpg`))
           })
       })
     }
@@ -117,7 +120,7 @@ async function getRemoteCovers(data) {
 
   // transform cover
   const transformCover = (cover) => {
-    if (cover === "out/covers/default.jpg") {
+    if (cover.includes('default.jpg')) {
       return cover
     } else {
       return new Promise((resolve) => {
@@ -141,7 +144,7 @@ async function getRemoteCovers(data) {
                       .then(cover => downloadBestCover(entry.isbn, cover))
                       .then(cover => transformCover(cover))
     } else if (!entry.isbn) {
-      entry.cover = 'out/covers/default.jpg'
+      entry.cover = path.join('out/covers/default.jpg')
     }
 
     return entry
@@ -157,7 +160,7 @@ async function buildNewMarkup(data) {
       let markup = `
         <li id='${entry.node}' style='display: inline;' lazy='loaded'>
           <div class='cover'>
-            <img src='${entry.cover.replace('out/', '')}' />
+            <img src='${entry.cover.replace(path.join('out/'), '')}' />
             
             <div class='tooltip'>
               <ul>
@@ -176,7 +179,7 @@ async function buildNewMarkup(data) {
 }
 
 async function updateSourceFile(markup) {
-  fs.writeFileSync('out/Recently_ReadDatabase.html', markup.html())
+  fs.writeFileSync(path.join('out/Recently_ReadDatabase.html'), markup.html())
 
   console.log("Finished 'bookcover' action.")
 }
