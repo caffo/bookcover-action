@@ -235,10 +235,11 @@ async function updateSourceFile(markup) {
       
       .cover:hover > .tooltip {
         display: block;
+        margin-top: -50px;
         position: absolute;
         z-index: 1;
-        top: 18.5rem;
         margin-left: 20px;
+        max-width: 400px;
         width: auto;
         padding-right: 10px;
         background: var(--bg-color);
@@ -247,6 +248,7 @@ async function updateSourceFile(markup) {
         color: var(--text-color);
         font-size: 75%;
       }
+      
       /* Tooltip CSS End */
     </style>
   `
