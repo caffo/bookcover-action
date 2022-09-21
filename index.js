@@ -8,7 +8,8 @@ const bookcovers = require("bookcovers");
 const download = require('image-downloader');
 const imagemagick = require('imagemagick-cli');
 
-const sourceFile = path.join(process.env.GITHUB_WORKSPACE, 'out/Recently_ReadDatabase.html')
+const basePath = process.env.GITHUB_WORKSPACE || ''
+const sourceFile = path.join(basePath, 'out/Recently_ReadDatabase.html')
 
 // ORCHESTRATION
 
@@ -56,7 +57,7 @@ async function getBooksData(entries) {
 async function addExistentCovers(data) {
   return data.map(function(entry) {
     let fileName = `covers/${entry.isbn}.jpg`
-    let file = path.join(process.env.GITHUB_WORKSPACE, fileName)
+    let file = path.join(basePath, fileName)
 
     if (fs.existsSync(file)) {
       entry.cover = fileName
@@ -111,7 +112,7 @@ async function getRemoteCovers(data) {
       return cover
     } else {
       return new Promise((resolve) => {
-        download.image({ url: cover, dest: path.join(process.env.GITHUB_WORKSPACE, `covers/${isbn}.jpg`) })
+        download.image({ url: cover, dest: path.join(basePath, `covers/${isbn}.jpg`) })
           .then(({ _filename }) => {
             resolve(`covers/${isbn}.jpg`)
           })
@@ -125,7 +126,7 @@ async function getRemoteCovers(data) {
       return cover
     } else {
       return new Promise((resolve) => {
-        let command = `magick ${path.join(process.env.GITHUB_WORKSPACE, cover)} -resize 100x157 -colorspace gray -ordered-dither o8x8 ${path.join(process.env.GITHUB_WORKSPACE, cover)}`;
+        let command = `magick ${path.join(basePath, cover)} -resize 100x157 -colorspace gray -ordered-dither o8x8 ${path.join(basePath, cover)}`;
 
         imagemagick.exec(command)
           .then(({ _stdout, stderr }) => {
@@ -255,7 +256,7 @@ async function updateSourceFile(markup) {
 
   markup('head').append(css)
 
-  fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'out/Recently_ReadDatabase.html'), markup.html())
+  fs.writeFileSync(path.join(basePath, 'out/Recently_ReadDatabase.html'), markup.html())
 
   console.log("Finished 'bookcover' action.")
 }
