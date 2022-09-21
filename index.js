@@ -179,6 +179,79 @@ async function buildNewMarkup(data) {
 }
 
 async function updateSourceFile(markup) {
+  let css = `
+    <style>
+      .cover {
+        padding:  0px !important;
+        margin:  0px !important;
+        width: fit-content;
+        display: inline-flex !important;
+        margin-right: 10px !important;
+        cursor: pointer;
+      }
+      
+      .cover img {
+        width: 100px;
+        height: 157px;
+        margin: 0px !important;
+        padding: 0px !important;
+        border: 1px solid var(--divider-color);
+        border-radius: 5px;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,.11));
+        -webkit-filter: drop-shadow(0 2px 8px rgba(0,0,0,.11));
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+      }
+      
+      .cover img:hover  {
+        -webkit-transform: scale(1.07);
+        transform: scale(1.07);
+      }
+      
+      
+      /* tooltips  */
+      .cover > .tooltip {
+        display: none;
+        position: relative;
+      }
+      
+      /* Tooltip Hover CSS Begin */
+      .cover > .tooltip > ul{
+        margin: 0px;
+        padding: 0px;
+        padding-left: 10px;
+      }
+      
+      .cover > .tooltip > ul > li {
+          line-height: 20px;
+          text-align: left;
+      }
+      
+      .cover > .tooltip > ul > li:first-child{
+        font-weight: bold;
+        font-size: 22px;
+      }
+      
+      .cover:hover > .tooltip {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 18.5rem;
+        margin-left: 20px;
+        width: auto;
+        padding-right: 10px;
+        background: var(--bg-color);
+        border: 1px solid var(--divider-color);
+        border-radius: 4px;
+        color: var(--text-color);
+        font-size: 75%;
+      }
+      /* Tooltip CSS End */
+    </style>
+  `
+
+  markup('head').append(css)
+
   fs.writeFileSync(path.join(process.env.GITHUB_WORKSPACE, 'out/Recently_ReadDatabase.html'), markup.html())
 
   console.log("Finished 'bookcover' action.")
