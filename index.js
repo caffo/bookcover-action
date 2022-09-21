@@ -55,10 +55,11 @@ async function getBooksData(entries) {
 
 async function addExistentCovers(data) {
   return data.map(function(entry) {
-    let file = path.join(process.env.GITHUB_WORKSPACE, `covers/${entry.isbn}.jpg`)
+    let fileName = `covers/${entry.isbn}.jpg`
+    let file = path.join(process.env.GITHUB_WORKSPACE, fileName)
 
     if (fs.existsSync(file)) {
-      entry.cover = file
+      entry.cover = fileName
     }
 
     return entry
