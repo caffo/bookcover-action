@@ -8,7 +8,7 @@ const bookcovers = require("bookcovers");
 const download = require('image-downloader');
 const imagemagick = require('imagemagick-cli');
 
-const basePath = process.env.GITHUB_WORKSPACE || ''
+const basePath = process.env.GITHUB_WORKSPACE || __dirname
 const sourceFile = path.join(basePath, 'out/Recently_ReadDatabase.html')
 
 // ORCHESTRATION
@@ -165,8 +165,8 @@ async function buildNewMarkup(data) {
             
             <div class='tooltip'>
               <ul>
-                <li>${entry.title}</li>
-                <li>${entry.comment}</li>
+                ${entry.title ? `<li>${entry.title}</li>` : ''}
+                ${entry.comment ? `<li>${entry.comment}</li>` : ''}
               </ul>    
             </div>
           </div>
