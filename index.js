@@ -90,7 +90,7 @@ async function getRemoteCovers(data) {
       'openLibrary.small'
     ]
 
-    let cover = path.join(process.env.GITHUB_WORKSPACE, 'covers/default.jpg')
+    let cover = 'covers/default.jpg'
 
     qualityRank.some(function(source) {
       let sourceResult = _.get(covers, source, null)
@@ -112,7 +112,7 @@ async function getRemoteCovers(data) {
       return new Promise((resolve) => {
         download.image({ url: cover, dest: path.join(process.env.GITHUB_WORKSPACE, `covers/${isbn}.jpg`) })
           .then(({ _filename }) => {
-            resolve(path.join(process.env.GITHUB_WORKSPACE, `covers/${isbn}.jpg`))
+            resolve(`covers/${isbn}.jpg`)
           })
       })
     }
@@ -124,7 +124,7 @@ async function getRemoteCovers(data) {
       return cover
     } else {
       return new Promise((resolve) => {
-        let command = `magick ${cover} -resize 100x157 -colorspace gray -ordered-dither o8x8 ${cover}`;
+        let command = `magick ${path.join(process.env.GITHUB_WORKSPACE, cover)} -resize 100x157 -colorspace gray -ordered-dither o8x8 ${path.join(process.env.GITHUB_WORKSPACE, cover)}`;
 
         imagemagick.exec(command)
           .then(({ _stdout, stderr }) => {
@@ -144,7 +144,7 @@ async function getRemoteCovers(data) {
                       .then(cover => downloadBestCover(entry.isbn, cover))
                       .then(cover => transformCover(cover))
     } else if (!entry.isbn) {
-      entry.cover = path.join(process.env.GITHUB_WORKSPACE, 'covers/default.jpg')
+      entry.cover = 'covers/default.jpg'
     }
 
     return entry
