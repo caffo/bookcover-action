@@ -7,30 +7,50 @@ const cheerio = require('cheerio');
 const bookcovers = require("bookcovers");
 const download = require('image-downloader');
 const imagemagick = require('imagemagick-cli');
+const { execSync } = require('node:child_process');
+
+// PREPARATION
 
 const basePath = process.env.GITHUB_WORKSPACE || __dirname
-const sourceFile = path.join(basePath, 'out/Recently_ReadDatabase.html')
+const sourceFiles = execSync("git grep -Frl --untracked 'bookcover:' 'out/*.html'", { encoding: 'utf8'} )
+                      .trim()
+                      .split('\n')
 
 // ORCHESTRATION
 
-loadSourceFile(sourceFile)
-  .then(file => parseSourceFile(file))
-  .then(dom => getBookEntries(dom))
-  .then(entries => getBooksData(entries))
-  .then(data => addExistentCovers(data))
-  .then(data => getRemoteCovers(data))
-  .then(data => buildNewMarkup((data)))
-  .then(markup => updateSourceFile(markup))
+async function run() {
+  for (const file of sourceFiles) {
+    console.log('\n')
+    console.log('- - - - - - - - - - - - - - - - - - - - - - - - -')
+    console.log(`Processing ${file}`)
+
+    await loadSourceFile(file)
+      .then(file => parseSourceFile(file))
+      .then(dom => getBookEntries(dom))
+      .then(entries => getBooksData(entries))
+      .then(data => addExistentCovers(data))
+      .then(data => getRemoteCovers(data))
+      .then(data => buildNewMarkup((data)))
+      .then(markup => updateSourceFile(file, markup))
+
+    console.log('- - - - - - - - - - - - - - - - - - - - - - - - -')
+    console.log('\n')
+  }
+}
+
+run();
 
 // STEPS
 
 async function loadSourceFile(file) {
-  console.log("Started 'bookcover' action.")
+  console.log("   step: load source file")
 
-  return fs.readFileSync(file, 'utf8');
+  return fs.readFileSync(path.join(basePath, file), 'utf8');
 }
 
 async function parseSourceFile(file) {
+  console.log("   step: parse source file")
+
   let dom = cheerio.load(file);
   global.$ = dom // needed for using cheerio features within several steps
 
@@ -38,10 +58,14 @@ async function parseSourceFile(file) {
 }
 
 async function getBookEntries(dom) {
-  return dom('li > h3 ~ ul > li:has(p:has(span:contains("bookcover:")))')
+  console.log("   step: find book entries")
+
+  return dom('span:contains("bookcover:")').closest('li')
 }
 
 async function getBooksData(entries) {
+  console.log("   step: extract book entries data")
+
   return entries.map(function () {
     return {
       node: $(this).attr('id'),
@@ -54,6 +78,8 @@ async function getBooksData(entries) {
 }
 
 async function addExistentCovers(data) {
+  console.log("   step: check existent book covers")
+
   return data.map(function(entry) {
     let fileName = `covers/${entry.isbn}.jpg`
     let file = path.join(basePath, fileName)
@@ -67,14 +93,18 @@ async function addExistentCovers(data) {
 }
 
 async function getRemoteCovers(data) {
+  console.log("   step: get missing book covers")
+
   // find available covers
   const searchCovers = (isbn) => {
     return new Promise((resolve) => {
-      bookcovers
-        .withIsbn(isbn)
-        .then(covers => {
-          resolve(covers);
-        });
+      setTimeout(function(){
+        bookcovers
+          .withIsbn(isbn)
+          .then(covers => {
+            resolve(covers);
+          });
+      }, 1000)
     });
   }
 
@@ -131,6 +161,8 @@ async function getRemoteCovers(data) {
           .then(({ _stdout, stderr }) => {
             if (!stderr) {
               resolve(cover)
+            } else {
+              console.log(stderr)
             }
           });
       })
@@ -155,6 +187,8 @@ async function getRemoteCovers(data) {
 }
 
 async function buildNewMarkup(data) {
+  console.log("   step: build new html markup")
+
   data.forEach(function (entry, i) {
       let node = $(`#${entry.node}`)
 
@@ -179,7 +213,9 @@ async function buildNewMarkup(data) {
   return $
 }
 
-async function updateSourceFile(markup) {
+async function updateSourceFile(file, markup) {
+  console.log("   step: update source file")
+
   let css = `
     <style>
       .cover {
@@ -255,7 +291,5 @@ async function updateSourceFile(markup) {
 
   markup('head').append(css)
 
-  fs.writeFileSync(path.join(basePath, 'out/Recently_ReadDatabase.html'), markup.html())
-
-  console.log("Finished 'bookcover' action.")
+  fs.writeFileSync(path.join(basePath, file), markup.html())
 }
