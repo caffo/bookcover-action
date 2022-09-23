@@ -285,6 +285,47 @@ async function updateSourceFile(file, markup) {
         font-size: 75%;
       }
       
+      @media (max-width: 767px) {
+        .cover img:hover {
+          -webkit-transform: none;
+          transform: none;
+        }
+
+        ul > li > ul >li:nth-child(2n+1)>.cover:hover >.tooltip{
+          display: flex;
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: -3rem;
+          position: absolute;
+          z-index: 1;
+          max-width: 400px;
+          width: auto;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 75%;
+        }
+
+        ul > li > ul >li:nth-child(2n+2)>.cover:hover >.tooltip{
+          margin-left: -25%;
+          margin-right: 10%;
+          display: flex;
+          margin-top: -3rem;
+          position: absolute;
+          z-index: 1;
+          max-width: 400px;
+          width: auto;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 75%;
+        }
+      }
+      
       /* Tooltip CSS End */
     </style>
   `
