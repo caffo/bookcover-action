@@ -217,8 +217,9 @@ async function updateSourceFile(file, markup) {
   console.log("   step: update source file")
 
   let css = `
-    /* Cover and Tooltip CSS including media-queries for mobile sreens */
     <style>
+      /* Cover and Tooltip CSS including media-queries for mobile sreens */
+      
       .cover {
         padding: 0px !important;
         margin: 0px !important;
