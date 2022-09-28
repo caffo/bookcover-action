@@ -217,70 +217,135 @@ async function updateSourceFile(file, markup) {
   console.log("   step: update source file")
 
   let css = `
-    <style>
-      /* Cover and Tooltip CSS including media-queries for mobile sreens */
-      
-      .cover {
-        padding: 0px !important;
-        margin: 0px !important;
-        width: fit-content;
-        display: inline-flex !important;
-        margin-right: 10px !important;
-        cursor: pointer;
-      }
+  <style>
+  /* Cover and Tooltip CSS including media-queries for mobile sreens */
+  .cover {
+    padding: 0px !important;
+    margin: 0px !important;
+    width: fit-content;
+    display: inline-flex !important;
+    margin-right: 10px !important;
+    cursor: pointer;
+  }
 
-      .cover img {
-        width: 100px;
-        height: 157px;
-        margin: 0px !important;
-        padding: 0px !important;
-        border: 1px solid var(--divider-color);
-        border-radius: 5px;
-        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
-        -webkit-filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
-        -webkit-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-      }
+  .cover img {
+    width: 100px;
+    height: 157px;
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 1px solid var(--divider-color);
+    border-radius: 5px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
+    -webkit-filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
 
+  .cover img:hover {
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07);
+  }
+
+  ul > li {
+      text-align: left!important;
+  }
+
+  /* tooltips  */
+  .cover>.tooltip {
+    display: none;
+    position: relative;
+  }
+
+  /* Tooltip Hover CSS Begin */
+  .cover>.tooltip>ul {
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+  }
+
+  .cover>.tooltip>ul>li {
+    line-height: 20px;
+    text-align: left;
+  }
+
+  .cover>.tooltip>ul>li:first-child {
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .cover:hover>.tooltip {
+    display: flex;
+    margin-top: -2rem;
+    position: absolute;
+    z-index: 1;
+    margin-left: 20px!important;
+    margin-right: 20px!important;
+    max-width: 400px;
+    width: auto;
+    padding-right: 10px;
+    background: var(--bg-color);
+    border: 1px solid var(--divider-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-size: 75%;
+  }
+
+    @media (min-width: 410px) and (max-width: 482px) {
       .cover img:hover {
-        -webkit-transform: scale(1.07);
-        transform: scale(1.07);
+        -webkit-transform: none;
+        transform: none;
       }
 
-      ul > li:has(.cover) {
-          text-align: left;
+      ul > li:nth-child(odd) > .cover:hover > .tooltip {
+        display: flex;
+        position: absolute;
+        margin-left: 10px!important;
+        margin-right: 100px!important;
+        z-index: 1;
+        max-width: 400px;
+        width: fit-content;
+        padding-right: 10px;
+        background: var(--bg-color);
+        border: 1px solid var(--divider-color);
+        border-radius: 4px;
+        color: var(--text-color);
+        font-size: 65%;
       }
 
-      /* tooltips  */
-      .cover>.tooltip {
-        display: none;
-        position: relative;
-      }
-
-      /* Tooltip Hover CSS Begin */
-      .cover>.tooltip>ul {
-        margin: 0px;
-        padding: 0px;
-        padding-left: 10px;
-      }
-
-      .cover>.tooltip>ul>li {
-        line-height: 20px;
-        text-align: left;
+      ul > li:nth-child(even) > .cover:hover > .tooltip {
+        display: flex;
+        position: absolute;
+        margin-left: -110px!important;
+        margin-right: 100px!important;
+        z-index: 1;
+        max-width: 400px;
+        width: fit-content;
+        padding-right: 10px;
+        background: var(--bg-color);
+        border: 1px solid var(--divider-color);
+        border-radius: 4px;
+        color: var(--text-color);
+        font-size: 65%;
       }
 
       .cover>.tooltip>ul>li:first-child {
         font-weight: bold;
-        font-size: 22px;
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 482px) and (max-width: 768px) {
+  
+      .cover img:hover {
+          -webkit-transform: none;
+          transform: none;
       }
 
       .cover:hover>.tooltip {
         display: flex;
-        margin-top: -2rem;
         position: absolute;
         z-index: 1;
-        margin-left: 20px!important;
-        margin-right: 20px!important;
+        margin-right: 30px!important;
         max-width: 400px;
         width: auto;
         padding-right: 10px;
@@ -288,100 +353,44 @@ async function updateSourceFile(file, markup) {
         border: 1px solid var(--divider-color);
         border-radius: 4px;
         color: var(--text-color);
-        font-size: 75%;
+        font-size: 65%;
       }
 
-      @media (min-width: 410px) and (max-width: 482px) {
-        .cover img:hover {
-          -webkit-transform: none;
-          transform: none;
-        }
+    }
 
-        ul > li:nth-child(odd) > .cover:hover > .tooltip {
-          display: flex;
-          position: absolute;
-          margin-left: 10px!important;
-          margin-right: 100px!important;
-          z-index: 1;
-          max-width: 400px;
-          width: fit-content;
-          padding-right: 10px;
-          background: var(--bg-color);
-          border: 1px solid var(--divider-color);
-          border-radius: 4px;
-          color: var(--text-color);
-          font-size: 65%;
-        }
+    @media (min-width: 768px){
+    
+    .cover img:hover {
+        -webkit-transform: none;
+        transform: none;
+    }
 
-        ul > li:nth-child(even) > .cover:hover > .tooltip {
-          display: flex;
-          position: absolute;
-          margin-left: -110px!important;
-          margin-right: 100px!important;
-          z-index: 1;
-          max-width: 400px;
-          width: fit-content;
-          padding-right: 10px;
-          background: var(--bg-color);
-          border: 1px solid var(--divider-color);
-          border-radius: 4px;
-          color: var(--text-color);
-          font-size: 65%;
-        }
+    ul > li {
+      text-align: left!important;
+    }
 
-        .cover>.tooltip>ul>li:first-child {
-          font-weight: bold;
-          font-size: 18px;
-        }
-      }
+    .cover>.tooltip>ul>li:first-child {
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-      @media (min-width: 482px) and (max-width: 768px) {
+    .cover:hover > .tooltip {
+      display: flex;
+      position: absolute;
+      z-index: 1;
+      max-width: 400px;
+      width: fit-content;
+      padding-right: 10px;
+      background: var(--bg-color);
+      border: 1px solid var(--divider-color);
+      border-radius: 4px;
+      color: var(--text-color);
+      font-size: 65%;
+    }
+  }
 
-      .cover img:hover {
-          -webkit-transform: none;
-          transform: none;
-        }
-
-        .cover>.tooltip>ul>li:first-child {
-          font-weight: bold;
-          font-size: 18px;
-        }
-
-        ul > li:nth-child(odd):not(li:first-child) > .cover:hover > .tooltip {
-          display: flex;
-          position: absolute;
-          margin-left: -100px!important;
-          z-index: 1;
-          max-width: 400px;
-          width: fit-content;
-          padding-right: 10px;
-          background: var(--bg-color);
-          border: 1px solid var(--divider-color);
-          border-radius: 4px;
-          color: var(--text-color);
-          font-size: 65%;
-        }
-
-        .cover:hover>.tooltip {
-          display: flex;
-          position: absolute;
-          z-index: 1;
-          margin-left: 10px!important;
-          margin-right: 30px!important;
-          max-width: 400px;
-          width: auto;
-          padding-right: 10px;
-          background: var(--bg-color);
-          border: 1px solid var(--divider-color);
-          border-radius: 4px;
-          color: var(--text-color);
-          font-size: 65%;
-      }
-
-      }
-
-      /* Tooltip CSS End */
-    </style>
+  /* Tooltip CSS End */
+</style>
   `
 
   markup('head').append(css)
