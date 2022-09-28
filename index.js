@@ -242,15 +242,14 @@ async function updateSourceFile(file, markup) {
         transition: all .2s ease-in-out;
       }
 
-      ul > li:has(.cover) {
-        text-align: left;
-      }
-
       .cover img:hover {
         -webkit-transform: scale(1.07);
         transform: scale(1.07);
       }
 
+      ul > li:has(.cover) {
+          text-align: left;
+      }
 
       /* tooltips  */
       .cover>.tooltip {
@@ -292,7 +291,7 @@ async function updateSourceFile(file, markup) {
         font-size: 75%;
       }
 
-      @media (max-width: 482px) {
+      @media (min-width: 410px) and (max-width: 482px) {
         .cover img:hover {
           -webkit-transform: none;
           transform: none;
@@ -300,10 +299,9 @@ async function updateSourceFile(file, markup) {
 
         ul > li:nth-child(odd) > .cover:hover > .tooltip {
           display: flex;
-          margin-top: -3rem;
           position: absolute;
           margin-left: 10px!important;
-          margin-right: 75px!important;
+          margin-right: 100px!important;
           z-index: 1;
           max-width: 400px;
           width: fit-content;
@@ -317,10 +315,9 @@ async function updateSourceFile(file, markup) {
 
         ul > li:nth-child(even) > .cover:hover > .tooltip {
           display: flex;
-          margin-top: -3rem;
           position: absolute;
-          margin-left: -100px!important;
-          margin-right: 130px!important;
+          margin-left: -110px!important;
+          margin-right: 100px!important;
           z-index: 1;
           max-width: 400px;
           width: fit-content;
@@ -338,7 +335,8 @@ async function updateSourceFile(file, markup) {
         }
       }
 
-      @media (max-width: 768px) {
+      @media (min-width: 482px) and (max-width: 768px) {
+
       .cover img:hover {
           -webkit-transform: none;
           transform: none;
@@ -349,13 +347,27 @@ async function updateSourceFile(file, markup) {
           font-size: 18px;
         }
 
+        ul > li:nth-child(odd):not(li:first-child) > .cover:hover > .tooltip {
+          display: flex;
+          position: absolute;
+          margin-left: -100px!important;
+          z-index: 1;
+          max-width: 400px;
+          width: fit-content;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 65%;
+        }
+
         .cover:hover>.tooltip {
           display: flex;
-          margin-top: -50px;
           position: absolute;
           z-index: 1;
-          margin-left: 20px!important;
-          margin-right: 20px!important;
+          margin-left: 10px!important;
+          margin-right: 30px!important;
           max-width: 400px;
           width: auto;
           padding-right: 10px;
@@ -364,11 +376,12 @@ async function updateSourceFile(file, markup) {
           border-radius: 4px;
           color: var(--text-color);
           font-size: 65%;
-        }
-    }
+      }
 
-    /* Tooltip CSS End */
-  </style>
+      }
+
+      /* Tooltip CSS End */
+    </style>
   `
 
   markup('head').append(css)
