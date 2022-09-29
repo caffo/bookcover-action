@@ -218,7 +218,8 @@ async function updateSourceFile(file, markup) {
 
   let css = `
     <style>
-      /* Cover and Tooltip CSS including media-queries for mobile sreens */<style>
+      /* Cover and Tooltip CSS including media-queries for mobile sreens */
+      
       .cover {
         padding: 0px !important;
         margin: 0px !important;
@@ -247,7 +248,7 @@ async function updateSourceFile(file, markup) {
       }
 
       ul > li {
-          text-align: left!important;
+          text-align: left;
       }
 
       /* tooltips  */
@@ -290,112 +291,111 @@ async function updateSourceFile(file, markup) {
         font-size: 75%;
       }
 
-        @media (min-width: 390px) and (max-width: 482px) {
-          .cover img:hover {
+      @media (min-width: 390px) and (max-width: 482px) {
+        .cover img:hover {
+          -webkit-transform: none;
+          transform: none;
+        }
+
+        ul > li:nth-child(odd) > .cover:hover > .tooltip {
+          display: flex;
+          position: absolute;
+          margin-left: 10px!important;
+          margin-right: 100px!important;
+          z-index: 1;
+          max-width: 400px;
+          width: fit-content;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 60%;
+        }
+
+        ul > li:nth-child(even) > .cover:hover > .tooltip {
+          display: flex;
+          position: absolute;
+          margin-left: -110px!important;
+          margin-right: 100px!important;
+          z-index: 1;
+          max-width: 400px;
+          width: fit-content;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 60%;
+        }
+
+        ul > li:first-child > .cover:hover > .tooltip {
+          display: flex;
+          position: absolute;
+          margin-left: 10px!important;
+          margin-right: 50px!important;
+          z-index: 1;
+          max-width: 400px;
+          width: fit-content;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 60%;
+        }
+
+        .cover>.tooltip>ul>li:first-child {
+          font-weight: bold;
+          font-size: 18px;
+        }
+      }
+
+      @media (min-width: 482px) and (max-width: 768px) {
+
+        .cover img:hover {
             -webkit-transform: none;
             transform: none;
           }
 
-          ul > li:nth-child(odd) > .cover:hover > .tooltip {
-            display: flex;
-            position: absolute;
-            margin-left: 10px!important;
-            margin-right: 100px!important;
-            z-index: 1;
-            max-width: 400px;
-            width: fit-content;
-            padding-right: 10px;
-            background: var(--bg-color);
-            border: 1px solid var(--divider-color);
-            border-radius: 4px;
-            color: var(--text-color);
-            font-size: 65%;
-          }
-
-          ul > li:nth-child(even) > .cover:hover > .tooltip {
-            display: flex;
-            position: absolute;
-            margin-left: -110px!important;
-            margin-right: 100px!important;
-            z-index: 1;
-            max-width: 400px;
-            width: fit-content;
-            padding-right: 10px;
-            background: var(--bg-color);
-            border: 1px solid var(--divider-color);
-            border-radius: 4px;
-            color: var(--text-color);
-            font-size: 65%;
-          }
-
-          ul > li:first-child > .cover:hover > .tooltip {
-            display: flex;
-            position: absolute;
-            margin-left: 10px!important;
-            margin-right: 50px!important;
-            z-index: 1;
-            max-width: 400px;
-            width: fit-content;
-            padding-right: 10px;
-            background: var(--bg-color);
-            border: 1px solid var(--divider-color);
-            border-radius: 4px;
-            color: var(--text-color);
-            font-size: 60%;
-          }
-
-          .cover>.tooltip>ul>li:first-child {
-            font-weight: bold;
-            font-size: 18px;
-          }
+        .cover>.tooltip>ul>li:first-child {
+          font-weight: bold;
+          font-size: 18px;
         }
 
-        @media (min-width: 482px) and (max-width: 768px) {
-
-          .cover img:hover {
-              -webkit-transform: none;
-              transform: none;
-          }
-
-          .cover>.tooltip>ul>li:first-child {
-            font-weight: bold;
-            font-size: 18px;
-          }
-
-          .cover:hover>.tooltip {
-            display: flex;
-            position: absolute;
-            z-index: 1;
-            margin-right: 30px!important;
-            max-width: 400px;
-            width: auto;
-            padding-right: 10px;
-            background: var(--bg-color);
-            border: 1px solid var(--divider-color);
-            border-radius: 4px;
-            color: var(--text-color);
-            font-size: 65%;
-          }
-
-          ul > li:nth-child(odd):not(:first-child) > .cover:hover > .tooltip {
-            display: flex;
-            position: absolute;
-            margin-left: -80px!important;
-            margin-right: 30px!important;
-            z-index: 1;
-            max-width: 400px;
-            width: fit-content;
-            padding-right: 10px;
-            background: var(--bg-color);
-            border: 1px solid var(--divider-color);
-            border-radius: 4px;
-            color: var(--text-color);
-            font-size: 65%;
-          }
-
+        .cover:hover>.tooltip {
+          display: flex;
+          position: absolute;
+          z-index: 1;
+          margin-right: 30px!important;
+          max-width: 400px;
+          width: auto;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 65%;
         }
 
-        @media (min-width: 768px){
+        ul > li:nth-child(odd):not(:first-child) > .cover:hover > .tooltip {
+          display: flex;
+          position: absolute;
+          margin-left: -80px!important;
+          margin-right: 30px!important;
+          z-index: 1;
+          max-width: 400px;
+          width: fit-content;
+          padding-right: 10px;
+          background: var(--bg-color);
+          border: 1px solid var(--divider-color);
+          border-radius: 4px;
+          color: var(--text-color);
+          font-size: 65%;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 825px){
 
         .cover img:hover {
             -webkit-transform: none;
@@ -406,9 +406,16 @@ async function updateSourceFile(file, markup) {
           text-align: left!important;
         }
 
+        .cover>.tooltip>ul>li:first-child {
+          font-weight: bold;
+          font-size: 18px;
+        }
+
         .cover:hover > .tooltip {
           display: flex;
           position: absolute;
+          margin-bottom: 20px;
+          margin-left: -100px;
           z-index: 1;
           max-width: 400px;
           width: fit-content;
