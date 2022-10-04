@@ -69,11 +69,11 @@ async function getBooksData(entries) {
   return entries.map(function () {
     return {
       node: $(this).attr('id'),
-      isbn: $(this).children('p:has(span:contains("bookcover:"))').text().replace('bookcover: ', '').trim(),
+      isbn: $(this).children('p:has(span:contains("bookcover:")):not(:contains("!"))').text().replace('bookcover: ', '').trim(),
       title: $(this).find('p:has(a)').first().html(),
       comment: $(this).find('ul > li > ul > li > p').html(),
       cover: '',
-      alternative: $(this).children('p:has(span:contains("bookcover: !"))').text().replace('bookcover: !', '').trim(),
+      alternative: $(this).children('p:has(span:contains("bookcover:")):contains("!")').text().replace('bookcover: !', '').trim(),
     }
   }).toArray();
 }
