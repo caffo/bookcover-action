@@ -73,6 +73,7 @@ async function getBooksData(entries) {
       title: $(this).find('p:has(a)').first().html(),
       comment: $(this).find('ul > li > ul > li > p').html(),
       cover: '',
+      alternative: $(this).children('p:has(span:contains("bookcover: !"))').text().replace('bookcover: !', '').trim(),
     }
   }).toArray();
 }
@@ -81,7 +82,9 @@ async function addExistentCovers(data) {
   console.log("   step: check existent book covers")
 
   return data.map(function(entry) {
-    let fileName = `covers/${entry.isbn}.jpg`
+    let uuid = entry.isbn || Buffer.from(entry.alternative).toString('hex')
+
+    let fileName = `covers/${uuid}.jpg`
     let file = path.join(basePath, fileName)
 
     if (fs.existsSync(file)) {
@@ -136,14 +139,14 @@ async function getRemoteCovers(data) {
   }
 
   // download best cover
-  const downloadBestCover = (isbn, cover) => {
+  const downloadBestCover = (uuid, cover) => {
     if (cover.includes('default.jpg')) {
       return cover
     } else {
       return new Promise((resolve) => {
-        download.image({ url: cover, dest: path.join(basePath, `covers/${isbn}.jpg`) })
+        download.image({ url: cover, dest: path.join(basePath, `covers/${uuid}.jpg`) })
           .then(({ _filename }) => {
-            resolve(`covers/${isbn}.jpg`)
+            resolve(`covers/${uuid}.jpg`)
           })
       })
     }
@@ -176,7 +179,12 @@ async function getRemoteCovers(data) {
                       .then(covers => pickBestCover(covers))
                       .then(cover => downloadBestCover(entry.isbn, cover))
                       .then(cover => transformCover(cover))
-    } else if (!entry.isbn) {
+    } else if (entry.alternative && !entry.isbn && !entry.cover) {
+      let uuid = Buffer.from(entry.alternative).toString('hex')
+
+      entry.cover = await downloadBestCover(uuid, entry.alternative)
+                      .then(cover => transformCover(cover))
+    } else if (!entry.isbn && !entry.alternative && !entry.cover) {
       entry.cover = 'covers/default.jpg'
     }
 
