@@ -226,7 +226,7 @@ async function updateSourceFile(file, markup) {
 
   let css = `
 		<style>
-		/* Cover and Tooltip CSS including media-queries for mobile screens */
+		/* Cover and Tooltip CSS including media-queries for mobile screens — 0.26 */
 
 			* {
 				box-sizing: border-box;
@@ -412,8 +412,20 @@ async function updateSourceFile(file, markup) {
 					.main article ul ul {
 						padding: 0 20px;
 					}
+					
+					.cover:hover>.tooltip {
+						left: 0;
+						min-width: unset;
+						width: 100%;
+						padding: 0 20px;
+						top: unset;
+						margin: -40px 0 0 0;
+						right: 0;
+						display: block;
+					}
+					
 				}
-
+	
 			/* Tooltip CSS End */
 
 		</style>
