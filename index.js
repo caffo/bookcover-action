@@ -225,8 +225,8 @@ async function updateSourceFile(file, markup) {
   console.log("   step: update source file")
 
   let css = `
-		<style>
-		/* Cover and Tooltip CSS including media-queries for mobile screens — 0.26 */
+<style>
+		/* Cover and Tooltip CSS including media-queries for mobile screens 0.27 */
 
 			* {
 				box-sizing: border-box;
@@ -410,7 +410,21 @@ async function updateSourceFile(file, markup) {
 				@media screen and (max-width: 480px) {
 					
 					.main article ul ul {
-						padding: 0 20px;
+						padding: 0 10px;
+					}
+					
+					.main article ul ul ul li:not(.main article ul .cover ul li) {
+						width: 31%;
+					}
+					
+					.main article ul ul ul:not(.main article ul .cover ul) {
+						padding: 0 10px;
+						display: flex;
+						flex-wrap: wrap;
+						gap: 3%;
+					}
+					ul>li>ul>li li {
+						padding: 0;
 					}
 					
 					.cover:hover>.tooltip {
@@ -425,6 +439,14 @@ async function updateSourceFile(file, markup) {
 					}
 					
 				}
+				
+				@media screen and (max-width: 374px)
+				{
+					.main article ul ul ul li:not(.main article ul .cover ul li) {
+						width: auto;
+					}
+				}
+				
 	
 			/* Tooltip CSS End */
 
