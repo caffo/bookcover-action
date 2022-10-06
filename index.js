@@ -225,190 +225,173 @@ async function updateSourceFile(file, markup) {
   console.log("   step: update source file")
 
   let css = `
-    	<style>
-		/* Cover and Tooltip CSS including media-queries for mobile screens */
-      
-		.cover {
-			padding: 0px !important;
-			margin: 0px !important;
-			width: fit-content;
-			display: inline-flex !important;
-			margin-right: 10px !important;
-			cursor: pointer;
-			position: relative;
-		}
+		<style>
+			/* Cover and Tooltip CSS including media-queries for mobile screens */
 
-		.cover img {
-			width: 100px;
-			height: 157px;
-			margin: 0px !important;
-			padding: 0px !important;
-			border: 1px solid var(--divider-color);
-			border-radius: 5px;
-			filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
-			-webkit-filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
-			-webkit-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;
-		}
-
-		 .cover img:hover {
-			-webkit-transform: scale(1.07);
-			transform: scale(1.07);
-		  }
-
-		  ul > li {
-			  text-align: left;
-		  }
-
-		  /* tooltips  */
-		  .cover>.tooltip {
-			display: none;
-			position: relative;
-		  }
-
-		  /* Tooltip Hover CSS Begin */
-		  
-			.cover>.tooltip>ul {
-				margin: 0px;
-				padding: 15px;
-				position: relative;
-				background: var(--bg-color);
-				border: 1px solid var(--divider-color);
-				border-radius: 4px;
+			* {
+				box-sizing: border-box;
 			}
-			.cover>.tooltip>ul>li {
-				line-height: 20px;
-				text-align: left;
-				margin: 0 0 10px 0;
-			}
-			
-			.cover>.tooltip>ul>li:last-child {
+			body {
 				margin: 0;
-			}
-			
-			.cover>.tooltip>ul>li a {
-				font-size: 22px;
-				font-weight: bold;
-			}
-		
-			.cover:hover>.tooltip { 
-				display: flex;
-				position: absolute;
-				color: var(--text-color);
-				font-size: 75%;
-				min-width: 400px;
-				float: right;
-				top: -45px;
-				left: 20px;
-				z-index: 1;
+				padding: 0;
 			}
 
-		
+			.cover {
+				padding: 0;
+				margin: 0;
+				width: fit-content;
+				display: inline-flex;
+				margin-right: 10px;
+				cursor: pointer;
+				position: relative;
+			}
 
-	  
-		 @media screen and (max-width: 992px)
-		 {
-				.cover:hover>.tooltip{
-				min-width: 225px;
-			}
-			
-			.cover>.tooltip>ul>li a {
-				font-size: 18px;
-				width: 100%;
-				line-height: 1.2;
-				display: inline-block;
-			}
-			.cover>.tooltip>ul>li {
-				font-size: 14px;
-				line-height: normal;
-			}
-		}
-		
-		@media screen and (max-width: 767px)
-		{
-			.cover>.tooltip>ul>li a {
-				font-size: 16px;
-			}
-			
-			.main article ul {
-				padding: 0 20px;
-			}
-		
-			.main article ul {
-				padding: 0 10px;
-			}
-			
-			.main article ul ul {
-				padding: 0 36px;
-				display: flex;
-				flex-wrap: wrap;
-				gap: 4% 4%;
-			}
-			.cover:hover>.tooltip {
-				left: 0;
-				min-width: 145px;
-			}
-			
-			ul>li>ul>li {
-				margin: 0
-			}
-			
-			.cover>.tooltip>ul {
-			  display: block !important;
-			}
-		}
-		
-		@media screen and (max-width: 480px)
-		{
-			
-			ul>li>ul>li .cover {
-				width: 100%;
-				margin: 0 !important;
-			}
-			
-			.main article h1 {
-				font-size: 1.7rem;
-				line-height: normal;
-			}
-			
-			.cover:hover>.tooltip {
-				min-width: 205px;
-				top: -25px;
-				left: 5px;
-			}
-			ul>li>ul>li:nth-child(2n+1) .cover .tooltip {
-				min-width: 235px;
-			}
-		}
-		
-		@media screen and (max-width: 400px)
-		{
-			.cover:hover>.tooltip {
-				min-width: 180px;
-			}
-		
-		}
-		
-		@media screen and (max-width: 375px) and (min-width: 361px)
-		{
-			.cover:hover>.tooltip {
-				min-width: 155px;
-			}
-		
-		}
-		
-		@media screen and (max-width: 360px)
-		{
-			.cover:hover>.tooltip, ul>li>ul>li:nth-child(2n+1) .cover .tooltip {
-				min-width: 220px;
-				left: 15px;
-			}
-		
-		}
-		
-		  /* Tooltip CSS End */
-		  
-	</style>
+			.cover img {
+				width: 100px;
+				height: 157px;
+				margin: 0;
+				padding: 0;
+				border: 1px solid var(--divider-color);
+				border-radius: 5px;
+				filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
+				-webkit-filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
+				-webkit-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+				}
+
+			 .cover img:hover {
+				-webkit-transform: scale(1.07);
+				transform: scale(1.07);
+				}
+
+				ul > li {
+					text-align: left;
+				}
+
+				/* tooltips  */
+				.cover>.tooltip {
+				display: none;
+				position: relative;
+				}
+
+				/* Tooltip Hover CSS Begin */
+
+				.cover>.tooltip>ul {
+					margin: 0px;
+					padding: 15px;
+					position: relative;
+					background: var(--bg-color);
+					border: 1px solid var(--divider-color);
+					border-radius: 4px;
+				}
+				.cover>.tooltip>ul>li {
+					line-height: 20px;
+					text-align: left;
+					margin: 0 0 10px 0;
+				}
+
+				.cover>.tooltip>ul>li:last-child {
+					margin: 0;
+				}
+
+				.cover>.tooltip>ul>li a {
+					font-size: 22px;
+					font-weight: bold;
+				}
+
+				.cover:hover>.tooltip { 
+					display: flex;
+					position: absolute;
+					color: var(--text-color);
+					font-size: 75%;
+					min-width: 400px;
+					float: right;
+					top: -45px;
+					left: 20px;
+					z-index: 1;
+				}
+
+
+				 @media screen and (max-width: 992px)
+				 {
+						.cover:hover>.tooltip{
+						min-width: 225px;
+					}
+
+					.cover>.tooltip>ul>li a {
+						font-size: 18px;
+						width: 100%;
+						line-height: 1.2;
+						display: inline-block;
+					}
+					.cover>.tooltip>ul>li {
+						font-size: 14px;
+						line-height: normal;
+					}
+				}
+
+				@media screen and (max-width: 767px)
+				{
+					.cover>.tooltip>ul>li a {
+						font-size: 16px;
+					}
+
+					.main article ul {
+						padding: 0 10px;
+						margin-left: 0;
+						margin-right: 0;
+					}
+
+					.main article ul ul {
+						padding: 0 20px;
+						position: relative
+					}
+					.cover:hover>.tooltip {
+						left: unset;
+						min-width: unset;
+						width: auto;
+						padding-left: 10px;
+						top: unset;
+						margin: -40px 0 0 0;
+					}
+
+					ul>li>ul>li li {
+						margin: 0;
+						padding: 5px;
+					}
+
+					.main article > h1 {
+						font-size: 1.7rem;
+						line-height: normal;
+						padding: 0 10px;
+					}
+
+					ul>li>ul>li .cover {
+						margin:0;
+						position: inherit;
+					}
+
+					ul>li>ul>li .cover .tooltip li {
+						padding: 0;
+					}
+
+
+					footer {
+						justify-content: center;
+						margin: 10px 0;
+						padding: 40px 0;
+					}
+
+					.pinned {
+							font-size: 18px;
+						line-height: 1.4;
+					}
+
+				}
+
+			/* Tooltip CSS End */
+
+		</style>
   `
 
   markup('head').append(css)
