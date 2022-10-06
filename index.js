@@ -226,7 +226,7 @@ async function updateSourceFile(file, markup) {
 
   let css = `
 		<style>
-			/* Cover and Tooltip CSS including media-queries for mobile screens */
+		/* Cover and Tooltip CSS including media-queries for mobile screens */
 
 			* {
 				box-sizing: border-box;
@@ -270,9 +270,21 @@ async function updateSourceFile(file, markup) {
 
 				/* tooltips  */
 				.cover>.tooltip {
-				display: none;
-				position: relative;
+					display: none;
+					position: absolute;
+					color: var(--text-color);
+					font-size: 70%;
+					min-width: 400px;
+					float: right;
+					top: -45px;
+					left: 20px;
+					z-index: 1;
 				}
+				
+				.cover:hover>.tooltip { 
+					display: flex;
+				}
+
 
 				/* Tooltip Hover CSS Begin */
 
@@ -294,56 +306,34 @@ async function updateSourceFile(file, markup) {
 					margin: 0;
 				}
 
-				.cover>.tooltip>ul>li a {
-					font-size: 22px;
+				.cover>.tooltip>ul>li:first-child a{
+					font-size: 19px;
 					font-weight: bold;
 				}
 
-				.cover:hover>.tooltip { 
-					display: flex;
-					position: absolute;
-					color: var(--text-color);
-					font-size: 75%;
-					min-width: 400px;
-					float: right;
-					top: -45px;
-					left: 20px;
-					z-index: 1;
-				}
-
+				
+				@media screen and (max-width: 1200px)
+				 {	
+					.cover>.tooltip {
+						min-width: 300px;
+					}	
+				 }
+				
 
 				 @media screen and (max-width: 992px)
-				 {
-						.cover:hover>.tooltip{
+				 {	
+					
+					ul>li>ul ul {
+						padding: 0 20px;
+					}
+	
+				 
+					.cover:hover>.tooltip{
 						min-width: 225px;
 					}
-
-					.cover>.tooltip>ul>li a {
-						font-size: 18px;
-						width: 100%;
-						line-height: 1.2;
-						display: inline-block;
-					}
-					.cover>.tooltip>ul>li {
-						font-size: 14px;
-						line-height: normal;
-					}
-				}
-
-				@media screen and (max-width: 767px)
-				{
-					.cover>.tooltip>ul>li a {
-						font-size: 16px;
-					}
-
-					.main article ul {
-						padding: 0 10px;
-						margin-left: 0;
-						margin-right: 0;
-					}
-
+					
 					.main article ul ul {
-						padding: 0 20px;
+						padding: 0 30px;
 						position: relative
 					}
 					.cover:hover>.tooltip {
@@ -354,10 +344,50 @@ async function updateSourceFile(file, markup) {
 						top: unset;
 						margin: -40px 0 0 0;
 					}
+					
+					.cover>.tooltip>ul>li:first-child a {
+						font-size: 18px;
+						width: 100%;
+						line-height: 1.2;
+						display: inline-block;
+					}
+					.cover>.tooltip>ul>li {
+						font-size: 16px;
+						line-height: normal;
+					}
+					
+					ul>li>ul>li .cover {
+						margin:0;
+						position: inherit;
+					}
+					
+					.main article ul {
+						padding: 0 10px;
+						margin-left: 0;
+						margin-right: 0;
+					}
 
 					ul>li>ul>li li {
 						margin: 0;
 						padding: 5px;
+					}
+
+					footer {
+						justify-content: center;
+						margin: 10px 0;
+						padding: 40px 0;
+						width: 100%;
+					}
+				}
+
+				@media screen and (max-width: 767px)
+				{
+					.cover>.tooltip>ul>li a {
+						font-size: 16px;
+					}
+
+					.main article ul ul {
+						padding: 0 50px;
 					}
 
 					.main article > h1 {
@@ -366,27 +396,22 @@ async function updateSourceFile(file, markup) {
 						padding: 0 10px;
 					}
 
-					ul>li>ul>li .cover {
-						margin:0;
-						position: inherit;
-					}
-
 					ul>li>ul>li .cover .tooltip li {
 						padding: 0;
 					}
-
-
-					footer {
-						justify-content: center;
-						margin: 10px 0;
-						padding: 40px 0;
-					}
-
+					
 					.pinned {
 							font-size: 18px;
 						line-height: 1.4;
 					}
 
+				}
+				
+				@media screen and (max-width: 480px) {
+					
+					.main article ul ul {
+						padding: 0 20px;
+					}
 				}
 
 			/* Tooltip CSS End */
