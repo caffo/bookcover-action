@@ -1,32 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Caffeine's Notes — Recently Read 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffeine's Wiki — Recently Read</title>
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="/typebase.min.css" type="text/css" />
-    <link rel="stylesheet" href="/microtip.min.css" type="text/css" />
-	<link rel="stylesheet" href="/style.css" type="text/css" />
-    <link rel="stylesheet" href="/mobile.css" type="text/css" />
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/typebase.min.css" type="text/css">
+    <link rel="stylesheet" href="/microtip.min.css" type="text/css">
+	<link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="stylesheet" href="/mobile.css" type="text/css">
     
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml">
      <script>
         var Hyphenopoly = {
             require: {
@@ -75,7 +73,240 @@ table {
   border-collapse: collapse;
 }
 </style>
-</head>
+<style>
+  @media only screen and (max-width: 600px) {
+    section {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+</style>
+<style>
+		/* Cover and Tooltip CSS including media-queries for mobile screens 0.27 */
+
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.cover {
+				padding: 0;
+				margin: 0;
+				width: fit-content;
+				display: inline-flex;
+				margin-right: 10px;
+				cursor: pointer;
+				position: relative;
+			}
+
+			.cover img {
+				width: 100px;
+				height: 157px;
+				margin: 0;
+				padding: 0;
+				border: 1px solid var(--divider-color);
+				border-radius: 5px;
+				filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
+				-webkit-filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .11));
+				-webkit-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+				}
+
+			 .cover img:hover {
+				-webkit-transform: scale(1.07);
+				transform: scale(1.07);
+				}
+
+				ul > li {
+					text-align: left;
+				}
+
+				/* tooltips  */
+				.cover>.tooltip {
+					display: none;
+					position: absolute;
+					color: var(--text-color);
+					font-size: 70%;
+					min-width: 400px;
+					float: right;
+					top: -45px;
+					left: 20px;
+					z-index: 1;
+				}
+				
+				.cover:hover>.tooltip { 
+					display: flex;
+				}
+
+
+				/* Tooltip Hover CSS Begin */
+
+				.cover>.tooltip>ul {
+					margin: 0px;
+					padding: 15px;
+					position: relative;
+					background: var(--bg-color);
+					border: 1px solid var(--divider-color);
+					border-radius: 4px;
+				}
+				.cover>.tooltip>ul>li {
+					line-height: 20px;
+					text-align: left;
+					margin: 0 0 10px 0;
+				}
+
+				.cover>.tooltip>ul>li:last-child {
+					margin: 0;
+				}
+
+				.cover>.tooltip>ul>li:first-child a{
+					font-size: 19px;
+					font-weight: bold;
+				}
+
+				
+				@media screen and (max-width: 1200px)
+				 {	
+					.cover>.tooltip {
+						min-width: 300px;
+					}	
+				 }
+				
+
+				 @media screen and (max-width: 992px)
+				 {	
+					
+					ul>li>ul ul {
+						padding: 0 20px;
+					}
+	
+				 
+					.cover:hover>.tooltip{
+						min-width: 225px;
+					}
+					
+					.main article ul ul {
+						padding: 0 30px;
+						position: relative
+					}
+					.cover:hover>.tooltip {
+						left: unset;
+						min-width: unset;
+						width: auto;
+						padding-left: 10px;
+						top: unset;
+						margin: -40px 0 0 0;
+					}
+					
+					.cover>.tooltip>ul>li:first-child a {
+						font-size: 18px;
+						width: 100%;
+						line-height: 1.2;
+						display: inline-block;
+					}
+					.cover>.tooltip>ul>li {
+						font-size: 16px;
+						line-height: normal;
+					}
+					
+					ul>li>ul>li .cover {
+						margin:0;
+						position: inherit;
+					}
+					
+					.main article ul {
+						padding: 0 10px;
+						margin-left: 0;
+						margin-right: 0;
+					}
+
+					ul>li>ul>li li {
+						margin: 0;
+						padding: 5px;
+					}
+
+					footer {
+						justify-content: center;
+						margin: 10px 0;
+						padding: 40px 0;
+						width: 100%;
+					}
+				}
+
+				@media screen and (max-width: 767px)
+				{
+					.cover>.tooltip>ul>li a {
+						font-size: 16px;
+					}
+
+					.main article ul ul {
+						padding: 0 50px;
+					}
+
+					.main article > h1 {
+						font-size: 1.7rem;
+						line-height: normal;
+						padding: 0 10px;
+					}
+
+					ul>li>ul>li .cover .tooltip li {
+						padding: 0;
+					}
+					
+					.pinned {
+							font-size: 18px;
+						line-height: 1.4;
+					}
+
+				}
+				
+				@media screen and (max-width: 480px) {
+					
+					.main article ul ul {
+						padding: 0 10px;
+					}
+					
+					.main article ul ul ul li:not(.main article ul .cover ul li) {
+						width: 31%;
+					}
+					
+					.main article ul ul ul:not(.main article ul .cover ul) {
+						padding: 0 10px;
+						display: flex;
+						flex-wrap: wrap;
+						gap: 3%;
+					}
+					ul>li>ul>li li {
+						padding: 0;
+					}
+					
+					.cover:hover>.tooltip {
+						left: 0;
+						min-width: unset;
+						width: 100%;
+						padding: 0 20px;
+						top: unset;
+						margin: -40px 0 0 0;
+						right: 0;
+						display: block;
+					}
+					
+				}
+				
+				@media screen and (max-width: 374px)
+				{
+					.main article ul ul ul li:not(.main article ul .cover ul li) {
+						width: auto;
+					}
+				}
+				
+	
+			/* Tooltip CSS End */
+
+		</style>
+  </head>
 
   <body>
     <header>
@@ -87,421 +318,1457 @@ table {
       </div>
 	</header>
     <section class="main">
-     <article data-page="Recently Read 3">
-       <h1 data-title="Recently Read 3">Recently Read 3</h1>
+     <article data-page="Recently Read">
+       <h1 data-title="Recently Read">Recently Read</h1>
 	   <ul><li id="nj4wKolVI" class="pinner"><p>I used to own a social bookshelf webapp, but as of <a class="rm-alias" href="/Now.html">right now</a>, I'm happy with this page. <a class="rm-alias" href="/The_Garden.html">Taking it slowly</a>, shall we? A lot of <a class="rm-alias" href="/AuthorsHaruki_Murakami.html">Murakami</a> re-reading, as you can see. </p>
 </li>
 <li id="Mkwi6Pbhd"><h1>2022</h1>
-<ul><li id="QUTwbegAd"><h3>September</h3>
-<ul><li id="Giun4mJl7"><p><span class="rm-bold">bookcover:</span> 9780374106874</p>
-<ul><li id="NRQ5fI_TY"><p><a href="https://bookshop.org/books/aug-9-fog/9780374106874">Aug 9 - Fog</a></p>
-<ul><li id="Uf5ehQ8hj"><p>Minimal, but deeply poetic. Read it twice already.</p>
-</li></ul></li></ul></li>
-<li id="WJ-atZS8W"><p><span class="rm-bold">bookcover:</span> 9780374538293</p>
-<ul><li id="y0-0wv3_s"><p><a href="https://bookshop.org/books/the-dominant-animal-stories/9780374538293">The Dominant Animal: Stories</a></p>
-<ul><li id="fvn-Tw2pZ"><p>Short and raw stories, magnificently written.</p>
-</li></ul></li></ul></li>
-<li id="eKsjjBHVG"><p><span class="rm-bold">bookcover:</span> 9781978630116 </p>
-<ul><li id="oljzGDAIR"><p><a href="https://bookshop.org/books/annabel-scheme/9781978630116">Annabel Scheme</a> ‡</p>
-<ul><li id="YFCUcJQ5d"><p></p>
-</li></ul></li></ul></li>
-<li id="hs8uKRzIG"><p><span class="rm-bold">bookcover:</span> 9781782395171</p>
-<ul><li id="HdBf_jFUR"><p><a href="https://www.amazon.com/Ajax-Penumbra-1969-Kindle-Single-ebook/dp/B00EWZC8QI/">Ajax Penumbra 1969 </a></p>
-<ul><li id="SDmWavU1w"><p>Lovely prequel to Penumbra&#39;s Bookstore.  Makes you want more and more.</p>
-</li></ul></li></ul></li></ul></li>
+<ul><li id="Xs2XTRc2B"><h3>November</h3>
+<ul>
+        <li id="UKbAcDNfm" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781532707193.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/p/books/cumulus-eliot-peper/11120177?ean=9781532707193">Cumulus</a></li>
+                <li>Decided to read all books by Eliot. Cumulus is not as good as R3aper, but still good. (Re-read)</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="1NeOFkh1a" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780143035695.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/p/books/in-the-miso-soup-ryu-murakami/11690256?ean=9780143035695">In the Miso Soup</a></li>
+                <li>The other Murakami. Also terrific. (Re-read)</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="HG0xFBQ9S" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f656c696f7470657065722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032322f30352f636f7665722d7265617033722e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://eliotpeper.com/books/reap3r">R3aper</a></li>
+                <li>Best book by Eliot until now.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="cjM5wF-yg" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780374212230.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/p/books/devil-house-john-darnielle/17879827?ean=9780374212230">Devil House</a></li>
+                <li>Amazingly written. The final chapters packs a punch.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="mNEbfi_2F" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781542034265.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/p/books/kismet-a-thriller-amina-akhtar/17798253?ean=9781542034265">Kismet: A Thriller</a></li>
+                <li>Boring.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="vZEB6mv3k" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780811232005.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/p/books/kick-the-latch-kathryn-scanlan/18283087">Kick the Latch</a></li>
+                <li>Not the best book by Scalan, but fun anyway.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="OWPtTDrTu" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781641290296.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.penguinrandomhouse.com/books/705235/lady-joker-volume-2-by-kaoru-takamura-translated-by-allison-markin-powell-and-marie-iida/9781641290296/">Lady Joker Volume 2</a></li>
+                <li>Amazing ending to an amazing book. Loved it.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="WPLyUF9Lx" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781641293945.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.penguinrandomhouse.com/books/598484/lady-joker-volume-1-by-kaoru-takamura/">Lady Joker Volume 1</a></li>
+                <li>Read it again to get prepared for volume 2.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
+<li id="WvHmVLuE7"><h3>October</h3>
+<ul>
+        <li id="AN5RBilK5" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781788739887.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/p/books/terminal-boredom-stories-izumi-suzuki/14973896?ean=9781788739887">Terminal Boredom: Stories</a></li>
+                <li>Boring. Expected more of this one.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="pvNOO81LQ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781943813643.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-double-star-and-other-occult-fantasies/9781943813643">The Double Star and Other Occult Fantasies</a>
+</li>
+                <li>Maddening, crazy and gothic. Very fun.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
+<li id="QUTwbegAd"><h3>September</h3>
+<ul>
+        <li id="stpa1DkXc" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781635420746.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/carnality/9781635420746">Carnality</a></li>
+                <li>Beautifully written. Almost dropped at the begin (its a slow-burn) but it wraps up well.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="Giun4mJl7" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780374106874.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/aug-9-fog/9780374106874">Aug 9 - Fog</a></li>
+                <li>Minimal, but deeply poetic. Read it twice already</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="WJ-atZS8W" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780374538293.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-dominant-animal-stories/9780374538293">The Dominant Animal: Stories</a></li>
+                <li>Short and raw stories, magnificently written</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="eKsjjBHVG" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f532f636f6d707265737365642e70686f746f2e676f6f6472656164732e636f6d2f626f6f6b732f31323631393337343337692f373432383534392e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/annabel-scheme/9781978630116">Annabel Scheme</a> </li>
+                <li>Very fun. Related to <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="hs8uKRzIG" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781782395171.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.amazon.com/Ajax-Penumbra-1969-Kindle-Single-ebook/dp/B00EWZC8QI/">Ajax Penumbra 1969 </a></li>
+                <li>Lovely prequel to Penumbra's Bookstore.  Makes you want more and more. Part of my <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="Kl-AlApDh"><h3>August</h3>
-<ul><li id="-sjlc8hNs"><p><span class="rm-bold">bookcover:</span> 9781250037756</p>
-<ul><li id="V26IlYpIK"><p><a href="https://bookshop.org/books/mr-penumbra-s-24-hour-bookstore/9781250037756">Mr. Penumbra&#39;s 24-Hour Bookstore</a> ∞ ‡</p>
-<ul><li id="flQt8une1"><p>Re-reading it as part of my <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></p>
-</li></ul></li></ul></li>
-<li id="RTim7HLVj"><p><span class="rm-bold">bookcover:</span> 9781737930600</p>
-<ul><li id="bN8VK9v6x"><p><a href="https://bookshop.org/books/lenormand-basics-how-to-read-lenormand-cards-for-beginners/9781737930600">Lenormand Basics: How to Read Lenormand Cards for Beginners</a></p>
-<ul><li id="1VygzwbE6"><p>Dipping my toes on <a href="/Lenormand.html">Lenormand</a>.</p>
-</li></ul></li></ul></li>
-<li id="tdZeUB2ru"><p><span class="rm-bold">bookcover:</span> 9781542027151</p>
-<ul><li id="wCMCVxtQx"><p><a href="https://bookshop.org/books/the-easy-life-in-kamusari-9781542027168/9781542027151">The Easy Life in Kamusari</a></p>
-<ul><li id="cfNwm4irC"><p>Really enjoyed this one.  A classic <a href="/Japanese_books_about_nothing.html">Japanese books about nothing</a>.</p>
-</li></ul></li></ul></li>
-<li id="mBIdpItrd"><p><span class="rm-bold">bookcover:</span> 9780307475299</p>
-<ul><li id="cMBMljcg8"><p><a href="https://en.wikipedia.org/wiki/Tokyo_Vice">Tokyo Vice</a> ☩</p>
-<ul><li id="rf1VjaGNY"><p>Dropped in the middle. May revisit in the future.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="-sjlc8hNs" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781250037756.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/mr-penumbra-s-24-hour-bookstore/9781250037756">Penumbra's 24-Hour Bookstore</a> </li>
+                <li>Re-reading it as part of my <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="RTim7HLVj" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781737930600.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/lenormand-basics-how-to-read-lenormand-cards-for-beginners/9781737930600">Lenormand Basics</a></li>
+                <li>Dipping my toes on <a href="/Lenormand.html">Lenormand</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="tdZeUB2ru" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781542027151.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-easy-life-in-kamusari-9781542027168/9781542027151">The Easy Life in Kamusari</a></li>
+                <li>Really enjoyed this one.  A classic <a href="/Japanese_books_about_nothing.html">Japanese books about nothing</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="mBIdpItrd" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780307475299.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Tokyo_Vice">Tokyo Vice</a></li>
+                <li>Dropped in the middle. May revisit in the future</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="kn6O6WTGH"><h3>July</h3>
-<ul><li id="tBHe4dIoV"><p><span class="rm-bold">bookcover:</span> 9788590379867</p>
-<ul><li id="ouYvTHw6d"><p><a href="http://www.lua.org/pil/">Programming in Lua</a></p>
-<ul><li id="2OoTgb3X7"><p>Always fun to get back to a language without arrays.</p>
-</li></ul></li></ul></li>
-<li id="czmba_nSD"><p><span class="rm-bold">bookcover:</span> 9781543057423</p>
-<ul><li id="4Hei8WSHv"><p><a href="https://www.publishersweekly.com/9781543057423">The Ginza Ghost</a> ☩</p>
-<ul><li id="-HGDoq630"><p>Read almost until the end, but got tired of it. Formulaic.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="tBHe4dIoV" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9788590379867.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="http://www.lua.org/pil/">Programming in Lua</a></li>
+                <li>Always fun to get back to a language without arrays</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="czmba_nSD" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781543057423.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.publishersweekly.com/9781543057423">The Ginza Ghost</a></li>
+                <li>Read almost until the end, but got tired of it. Formulaic</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="tJkTDso3d"><h3>May</h3>
-<ul><li id="5b1aZunJa"><p><span class="rm-bold">bookcover:</span> 9780060516239</p>
-<ul><li id="ec4ALHNjE"><p><a href="https://www.thriftbooks.com/w/dreaming-pachinko_isaac-adamson/741043/#edition=57154867&amp;idiq=46529309">Dreaming Pachinko</a></p>
-<ul><li id="OAgIhyGpv"><p>Lovely Billy Chaka book. Always a pleasure.</p>
-</li></ul></li></ul></li>
-<li id="NE6NeVAnC"><p><span class="rm-bold">bookcover:</span> 9781101911952</p>
-<ul><li id="Bb92wSlRL"><p><a href="http://www.emilymandel.com/montreal.html">Last Night in Montreal</a></p>
-<ul><li id="0tAfcxk9i"><p>This book is absolutely lovely. The characters are compelling even though they&#39;re not all likable.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="5b1aZunJa" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780060516239.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.thriftbooks.com/w/dreaming-pachinko_isaac-adamson/741043/#edition=57154867&amp;idiq=46529309">Dreaming Pachinko</a></li>
+                <li>Lovely Billy Chaka book. Always a pleasure.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="NE6NeVAnC" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781101911952.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="http://www.emilymandel.com/montreal.html">Last Night in Montreal</a></li>
+                <li>This book is absolutely lovely. The characters are compelling even though they're not all likable.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="a7aktVN3w"><h3>April</h3>
-<ul><li id="jMMN-165Z"><p><span class="rm-bold">bookcover:</span> 9781476716763</p>
-<ul><li id="DZeIBdxnT"><p><a href="https://jenniferegan.com/books/the-candy-house/">The Candy House</a></p>
-<ul><li id="oEOWpevzw"><p>Not as good as &quot;A Visit from the Goon Squad&quot;.</p>
-</li></ul></li></ul></li>
-<li id="VcAmoo_V6"><p><span class="rm-bold">bookcover:</span> 9780307477477</p>
-<ul><li id="RdIjyfIR1"><p><a href="https://en.wikipedia.org/wiki/A_Visit_from_the_Goon_Squad">A Visit from the Goon Squad</a> ‡</p>
-<ul><li id="GwBBUt-3g"><p>Amazing. Loved this one so much. Engrossing characters,  dark and funny at the same time. A favorite.</p>
-</li></ul></li></ul></li>
-<li id="TUEDOLTks"><p><span class="rm-bold">bookcover:</span> 9780593231463</p>
-<ul><li id="f2kOsLqgG"><p><a href="https://www.katefolk.com/">Out There</a> ‡</p>
-<ul><li id="dYXh1LG5_"><p>Black Mirror vibes. Loved it.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="jMMN-165Z" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781476716763.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://jenniferegan.com/books/the-candy-house/">The Candy House</a></li>
+                <li>Not as good as "A Visit from the Goon Squad".</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="VcAmoo_V6" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780307477477.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/A_Visit_from_the_Goon_Squad">A Visit from the Goon Squad</a></li>
+                <li>Amazing. Loved this one so much. Engrossing characters,  dark and funny at the same time. A favorite</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="TUEDOLTks" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780593231463.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.katefolk.com/">Out There</a></li>
+                <li>Black Mirror vibes. Loved it</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="DSb2JwLrA"><h3>March</h3>
-<ul><li id="se8DnTM4l"><p><span class="rm-bold">bookcover:</span> 9780525561446</p>
-<ul><li id="98MhUkueu"><p><a href="https://bookshop.org/books/the-urge-our-history-of-addiction/9780525561446">The Urge: Our History of Addiction</a></p>
-<ul><li id="QGjJ4I_Tz"><p>I dig it. Deep research mixed with the author&#39;s own recovery story.</p>
-</li></ul></li></ul></li>
-<li id="JxECyL-EI"><p><span class="rm-bold">bookcover:</span> 9780374212230</p>
-<ul><li id="GOt_rWJuP"><p><a href="https://bookshop.org/books/devil-house-9781250862884/9780374212230">Devil House</a> </p>
-<ul><li id="x2iZn5uTx"><p>Dropped it. Not in the right mind-space, I think. May try again later.</p>
-</li></ul></li></ul></li>
-<li id="FYGTaSKy9"><p><span class="rm-bold">bookcover:</span> 9780192823809</p>
-<ul><li id="ppLp_FVCf"><p><a href="https://www.gutenberg.org/files/244/244-h/244-h.htm">A Study in Scarlet</a></p>
-<ul><li id="UE6rkaiWS"><p>A classic. Read it in the past and it&#39;s always a guilty pleasure.</p>
-</li></ul></li></ul></li>
-<li id="6q9vTr_VJ"><p><span class="rm-bold">bookcover:</span> 9781039000520</p>
-<ul><li id="EUBxnbPvI"><p><a href="https://www.publishersweekly.com/978-1-03-900052-0">Binge</a></p>
-<ul><li id="rIZ5plUc_"><p>Not that fun. Plowed through it quickly, left no mark.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="se8DnTM4l" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780525561446.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-urge-our-history-of-addiction/9780525561446">Urge: Our History of Addiction</a></li>
+                <li>I dig it. Deep research mixed with the author's own recovery story</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="JxECyL-EI" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780374212230.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/devil-house-9781250862884/9780374212230">Devil House</a> </li>
+                <li>Dropped it. Not in the right mind-space, I think. May try again later</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="FYGTaSKy9" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780192823809.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.gutenberg.org/files/244/244-h/244-h.htm">A Study in Scarlet</a></li>
+                <li>A classic. Read it in the past and it's always a guilty pleasure</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="6q9vTr_VJ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781039000520.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.publishersweekly.com/978-1-03-900052-0">Binge</a></li>
+                <li>Not that fun. Plowed through it quickly, left no mark</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="yOFD5bJqr"><h3>February</h3>
-<ul><li id="d61t8gua6"><p><span class="rm-bold">bookcover:</span> 9781782275039</p>
-<ul><li id="JeNjRaAwQ"><p><a href="https://www.penguinrandomhouse.com/books/635152/the-inugami-curse-by-seishi-yokomizo/">The Inugami Curse</a></p>
-<ul><li id="ryYz-H0fN"><p>A classic. Formulaic but good.</p>
-</li></ul></li></ul></li>
-<li id="kDV72LjQh"><p><span class="rm-bold">bookcover:</span> 9780062407610</p>
-<ul><li id="zeF7e_93Z"><p><a href="https://lochhead.com/play-bigger/">Play Bigger</a></p>
-<ul><li id="SDb6Lu3si"><p>Dropped it. Boring and too PR-ish.</p>
-</li></ul></li></ul></li>
-<li id="8Xx5-un-x"><p><span class="rm-bold">bookcover:</span> 9781974719860</p>
-<ul><li id="vNcyYqu2_"><p><a href="https://junjiitomanga.fandom.com/wiki/A_Deserter_in_the_House">Deserter (Junji Ito)</a></p>
-<ul><li id="HqfD1DtDd"><p>Amazing collection of early Ito works. Simpler stories, from a simpler time.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="d61t8gua6" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781782275039.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.penguinrandomhouse.com/books/635152/the-inugami-curse-by-seishi-yokomizo/">The Inugami Curse</a></li>
+                <li>A classic. Formulaic but good</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="kDV72LjQh" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780062407610.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://lochhead.com/play-bigger/">Play Bigger</a></li>
+                <li>Dropped it. Boring and too PR-ish</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="8Xx5-un-x" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781974719860.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://junjiitomanga.fandom.com/wiki/A_Deserter_in_the_House">Deserter (Junji Ito)</a></li>
+                <li>Amazing collection of early Ito works. Simpler stories, from a simpler time</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="Bl_5nDy30"><h3>January</h3>
-<ul><li id="Km1wq-dr0"><p><span class="rm-bold">bookcover:</span> 9781974703760</p>
-<ul><li id="vps-NndDx"><p><a href="https://junjiitomanga.fandom.com/wiki/Frankenstein">Frankenstein (Junji Ito)</a></p>
-<ul><li id="hbGFpVF4K"><p>Not my favorite. Still good nonetheless.</p>
-</li></ul></li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="Km1wq-dr0" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781974703760.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://junjiitomanga.fandom.com/wiki/Frankenstein">Frankenstein (Junji Ito)</a></li>
+                <li>Not my favorite. Still good nonetheless</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li></ul></li>
 <li id="FduFCCZVD"><h1>2021</h1>
 <ul><li id="cq1G32lfZ"><h3>December</h3>
-<ul><li id="2CMDjW7Mi"><p><span class="rm-bold">bookcover:</span> 9780374602581</p>
-<ul><li id="mcYdoyVne"><p><a href="https://us.macmillan.com/books/9780374602581/laserwriterii">LaserWriter II</a> ☩</p>
-<ul><li id="jJPYUOTkG"><p>Dropped. I wasn't in the proper mental state to read it, I think. Will try again as part of the <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></p>
-</li></ul></li></ul></li>
-<li id="MwotUf5bE"><p><span class="rm-bold">bookcover:</span> 9784925080811</p>
-<ul><li id="WUtYdes_o"><p><a href="https://en.wikipedia.org/wiki/The_Tokyo_Zodiac_Murders">The Tokyo Zodiac Murders</a></p>
-<ul><li id="1beAuqlgi"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="2CMDjW7Mi" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780374602581.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://us.macmillan.com/books/9780374602581/laserwriterii">LaserWriter II</a></li>
+                <li>Dropped. I wasn't in the proper mental state to read it, I think. Will try again as part of the <a href="/BooksPenumbraverse_Tour.html">Books/Penumbraverse Tour</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="MwotUf5bE" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9784925080811.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Tokyo_Zodiac_Murders">The Tokyo Zodiac Murders</a></li>
+                <li>Expected more from it. Well written, but not that good</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="kvvG6KNPB"><h3>November</h3>
-<ul><li id="q5dkthu4c"><p><span class="rm-bold">bookcover:</span> 9781782273646</p>
-<ul><li id="lfaHpvsly"><p><a href="https://www.penguinrandomhouse.ca/books/577225/the-lady-killer-by-masako-togawa/9781782273646">The Lady Killer</a></p>
-<ul><li id="HqPnPWBs6"><p>This book has lots of twists and turns, and an improbable plot, but it is still interesting to read.</p>
-</li></ul></li></ul></li>
-<li id="9BaiQHKPZ"><p><span class="rm-bold">bookcover:</span> 9784805311936</p>
-<ul><li id="M-s1Zpa9C"><p><a href="https://www.tuttlepublishing.com/books-by-country/japanese-tales-of-mystery-and-imagination">Japanese Tales of Mystery &amp; Imagination</a></p>
-<ul><li id="kNtddAenm"><p>It has some of his best short stories, The Human Chair, The Caterpillar. </p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="q5dkthu4c" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781782273646.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.penguinrandomhouse.ca/books/577225/the-lady-killer-by-masako-togawa/9781782273646">The Lady Killer</a></li>
+                <li>This book has lots of twists and turns, and an improbable plot, but it is still interesting to read</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="9BaiQHKPZ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9784805311936.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.tuttlepublishing.com/books-by-country/japanese-tales-of-mystery-and-imagination">Japanese Tales of Mystery &amp; Imagination</a></li>
+                <li>It has some of his best short stories, The Human Chair, The Caterpillar </li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="lKZAX4pEV"><h3>October</h3>
-<ul><li id="W_uCCoyCu"><p><span class="rm-bold">bookcover:</span> 9780062458711</p>
-<ul><li id="ZcroKBgc3"><p><a href="https://www.nealstephenson.com/fall,-or-dodge-in-hell.html">Fall or, Dodge in Hell</a></p>
-<ul><li id="yTs8KYtRJ"><p>Loved the first half, hated the rest. Classic Stephenson.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="W_uCCoyCu" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780062458711.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.nealstephenson.com/fall,-or-dodge-in-hell.html">Fall or, Dodge in Hell</a></li>
+                <li>Loved the first half, hated the rest. Classic Stephenson</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="VDucTU0WJ"><h3>September</h3>
-<ul><li id="5DI1jtKnN"><p><span class="rm-bold">bookcover:</span> 9781250070326</p>
-<ul><li id="DHETyVCR_"><p><a href="https://us.macmillan.com/books/9781250070326">Malice</a></p>
-<ul><li id="DqPh4mkYn"><p>Keigo Higashino never disappoints. Nice page turner.</p>
-</li></ul></li></ul></li>
-<li id="NcRc14TCp"><p><span class="rm-bold">bookcover:</span> 9781609453992</p>
-<ul><li id="NEPi88dRz"><p><a href="https://bookshop.org/books/the-nakano-thrift-shop/9781609453992">The Nakano Thrift Shop</a></p>
-<ul><li id="RLaMbN4cF"><p>Loved it. Another amazing <a href="/Japanese_books_about_nothing.html">Japanese books about nothing</a>.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="5DI1jtKnN" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781250070326.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://us.macmillan.com/books/9781250070326">Malice</a></li>
+                <li>Keigo Higashino never disappoints. Nice page turner</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="NcRc14TCp" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781609453992.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-nakano-thrift-shop/9781609453992">The Nakano Thrift Shop</a></li>
+                <li>Loved it. Another amazing <a href="/Japanese_books_about_nothing.html">Japanese books about nothing</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="sJnyuYi7A"><h3>August</h3>
-<ul><li id="MDw7Uy5Fa"><p><span class="rm-bold">bookcover:</span> 9781991152305</p>
-<ul><li id="iAA3Q9ore"><p><a href="https://sive.rs/h">How to Live</a></p>
-<ul><li id="3qByT02hA"><p>It&#39;s simple. Derek writes, I read. </p>
-</li></ul></li></ul></li>
-<li id="ffiHlCrS5"><p><span class="rm-bold">bookcover:</span> 9781250160003</p>
-<ul><li id="inCv6o1bv"><p><a href="https://en.wikipedia.org/wiki/Six_Four">Six Four</a></p>
-<ul><li id="8NUrvvQCF"><p>Feels like a lite version of Lady Joker. Quick fun japanese crime/mystery novel.</p>
-</li></ul></li></ul></li>
-<li id="1vOH8dsNZ"><p><span class="rm-bold">bookcover:</span> 9780380812929</p>
-<ul><li id="H808zveHf"><p><a href="https://www.thriftbooks.com/w/hokkaido-popsicle_isaac-adamson/741235/?resultid=8015fb39-3543-4a09-82b7-04262a6f1456#edition=2379234&amp;idiq=9207614">Hokkaido Popsicle</a></p>
-<ul><li id="hWOv-aL1D"><p>As good as Tokyo Suckerpunch, with the same manic energy and humor.</p>
-</li></ul></li></ul></li>
-<li id="aAMhiyn-0"><p><span class="rm-bold">bookcover:</span> 9781250260505</p>
-<ul><li id="v5o5DDQSd"><p><a href="https://publishing.tor.com/prospersdemon-kjparker/9781250260505/">Prosper&#39;s Demon</a></p>
-<ul><li id="p-uCjyWcS"><p>Amazing novella. Would read more on this universe.</p>
-</li></ul></li></ul></li>
-<li id="Ml9sSUsps"><p><span class="rm-bold">bookcover:</span> 9781798041734</p>
-<ul><li id="mP3T_KRlo"><p><a href="https://travisbagwell.com/">Awaken Online: Dominion</a></p>
-<ul><li id="6aV8Catuz"><p>Repetitive. I like it as a quick escapism, like the others in the series.</p>
-</li></ul></li></ul></li>
-<li id="9OVsssBny"><p><span class="rm-bold">bookcover:</span> 9780374159122</p>
-<ul><li id="3bxhzlkDh"><p><a href="https://us.macmillan.com/books/9780374159122">Four Thousand Weeks</a></p>
-<ul><li id="grCxIu-kx"><p>Burkeman writes amazingly well. Not a lot of new stuff here, but relates well to my values and perspectives.</p>
-</li></ul></li></ul></li>
-<li id="yHwFiatbF"><p><span class="rm-bold">bookcover:</span> 9780380812912</p>
-<ul><li id="I9xMH7ps0"><p><a href="https://www.thriftbooks.com/w/tokyo-suckerpunch_isaac-adamson/693738/#edition=2379233&amp;idiq=3622802">Tokyo Suckerpunch</a></p>
-<ul><li id="DBZQRrnt_"><p>An explosive, out-of-control trip through the underbelly of Tokyo.</p>
-</li></ul></li></ul></li>
-<li id="3Eqn8XLTB"><p><span class="rm-bold">bookcover:</span> 9781723437656</p>
-<ul><li id="xJaPQOZV-"><p><a href="https://travisbagwell.com/">Awaken Online: Apathy</a></p>
-<ul><li id="1eaxz5-OM"><p>Fun and simple. This series is getting boring.</p>
-</li></ul></li></ul></li>
-<li id="ejFQQn31X"><p><span class="rm-bold">bookcover:</span> 9780525434986</p>
-<ul><li id="xM4Atqqb3"><p><a href="https://www.penguinrandomhouse.com/books/557648/the-price-you-pay-by-aidan-truhen/">The Price You Pay</a></p>
-<ul><li id="St9w1PCnv"><p>Amazing. I snorted this book in one sitting while on vacation.</p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="MDw7Uy5Fa" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f736976652e72732f696d616765732f446572656b5369766572732d636f7665722d486f77546f4c6976652d343030783634302e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://sive.rs/h">How to Live</a></li>
+                <li>It's simple. Derek writes, I read it</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="ffiHlCrS5" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781250160003.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Six_Four">Six Four</a></li>
+                <li>Feels like a lite version of Lady Joker. Quick fun japanese crime/mystery novel</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="1vOH8dsNZ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780380812929.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.thriftbooks.com/w/hokkaido-popsicle_isaac-adamson/741235/?resultid=8015fb39-3543-4a09-82b7-04262a6f1456#edition=2379234&amp;idiq=9207614">Hokkaido Popsicle</a></li>
+                <li>As good as Tokyo Suckerpunch, with the same manic energy and humor.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="aAMhiyn-0" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781250260505.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://publishing.tor.com/prospersdemon-kjparker/9781250260505/">Prosper's Demon</a></li>
+                <li>Amazing novella. Would read more on this universe</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="Ml9sSUsps" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f6d2e6d656469612d616d617a6f6e2e636f6d2f696d616765732f492f3431526d72773278694c4c2e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://travisbagwell.com/">Awaken Online: Dominion</a></li>
+                <li>Repetitive. I like it as a quick escapism, like the others in the series</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="9OVsssBny" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780374159122.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://us.macmillan.com/books/9780374159122">Four Thousand Weeks</a></li>
+                <li>Burkeman writes amazingly well. Not a lot of new stuff here, but relates well to my values and perspectives</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="yHwFiatbF" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780380812912.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.thriftbooks.com/w/tokyo-suckerpunch_isaac-adamson/693738/#edition=2379233&amp;idiq=3622802">Tokyo Suckerpunch</a></li>
+                <li>An explosive, out-of-control trip through the underbelly of Tokyo</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="3Eqn8XLTB" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f63646e2e6b6576696e6d617363686b652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032312f30332f31313030323331352f4177616b656e2d4f6e6c696e652d332e352d4170617468792d4c415247452d3130323478313533362e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://travisbagwell.com/">Awaken Online: Apathy</a></li>
+                <li>Fun and simple. Sadly the series is getting boring to me</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="ejFQQn31X" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780525434986.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.penguinrandomhouse.com/books/557648/the-price-you-pay-by-aidan-truhen/">The Price You Pay</a></li>
+                <li>Amazing. I snorted this book in one sitting while on vacation</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="mpFKpVQVs"><h3>July</h3>
-<ul><li id="rZW25maPf"><p><span class="rm-bold">bookcover:</span> 9784062002417</p>
-<ul><li id="bVg869lg3"><p><a href="https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase">A Wild Sheep Chase</a></p>
-<ul><li id="yS21ooFzU"><p>Murakami. Always. The Rat. Always.</p>
-</li></ul></li></ul></li>
-<li id="zvRGR7aMJ"><p><span class="rm-bold">bookcover:</span> 9780679733782</p>
-<ul><li id="2qMATnTHF"><p><a href="https://en.wikipedia.org/wiki/The_Woman_in_the_Dunes">The Woman in the Dunes</a> ‡</p>
-<ul><li id="YfGIDj2ew"><p></p>
-</li></ul></li></ul></li>
-<li id="Su4Ju06-w"><p><span class="rm-bold">bookcover:</span> 9788936433598</p>
-<ul><li id="gDL4cAiwJ"><p><a href="https://en.wikipedia.org/wiki/The_Vegetarian">The Vegetarian</a></p>
-<ul><li id="3apuAtD4l"><p></p>
-</li></ul></li></ul></li>
-<li id="yk017W1Yp"><p><span class="rm-bold">bookcover:</span> 9780688163525</p>
-<ul><li id="4XD1Cu_mV"><p><a href="https://philosophynow.org/issues/71/The_Importance_of_Living_by_Lin_Yutang">The Importance of Living</a> </p>
-<ul><li id="toqig5IWu"><p></p>
-</li></ul></li></ul></li>
-<li id="Ks3ZS10C8"><p><span class="rm-bold">bookcover:</span> 9780811228855</p>
-<ul><li id="XKRXh0Hmc"><p><a href="https://www.amazon.com/Factory-Hiroko-Oyamada/dp/0811228851">The Factory</a></p>
-<ul><li id="E2TmCnIhM"><p></p>
-</li></ul></li></ul></li>
-<li id="VcH5pqX-M"><p><span class="rm-bold">bookcover:</span> 9780340739761</p>
-<ul><li id="fibFYzs7h"><p><a href="https://en.wikipedia.org/wiki/Number9dream">Number9Dream: A Novel</a> ☩</p>
-<ul><li id="JMxvc-SAH"><p></p>
-</li></ul></li></ul></li>
-<li id="oTXU-LdhI"><p><span class="rm-bold">bookcover:</span> 9781729330883</p>
-<ul><li id="o9I-owJSu"><p><a href="https://www.amazon.com/Zen-Forth-Language-EFORTH-Instruments/dp/1729330886">Zen and the Forth Language</a> ☩</p>
-<ul><li id="cbyBKTaXx"><p></p>
-</li></ul></li></ul></li>
-<li id="tv7PqHle4"><p><span class="rm-bold">bookcover:</span> 9781683242635</p>
-<ul><li id="kaHCD9nM7"><p><a href="https://en.wikipedia.org/wiki/The_Wayward_Pines_Trilogy">Pines</a> </p>
-<ul><li id="MiMWtwTqg"><p></p>
-</li></ul></li></ul></li>
-<li id="ggZjLWiQB"><p><span class="rm-bold">bookcover:</span> 9781508503736</p>
-<ul><li id="dY8h2Qvqv"><p><a href="https://en.wikipedia.org/wiki/The_Decagon_House_Murders">The Decagon House Murders</a></p>
-<ul><li id="KENi0b87O"><p></p>
-</li></ul></li></ul></li>
-<li id="13ETO-AV1"><p><span class="rm-bold">bookcover:</span> 9781719531108</p>
-<ul><li id="ovBZeScmd"><p><a href="https://travisbagwell.com/">Awaken Online: Evolution</a></p>
-<ul><li id="osZIftqZB"><p></p>
-</li></ul></li></ul></li>
-<li id="oap2fMSy0"><p><span class="rm-bold">bookcover:</span> 9781978177406</p>
-<ul><li id="2k12kfn33"><p><a href="https://travisbagwell.com/">Awaken Online: Retribution</a></p>
-<ul><li id="ce4FLjsZ-"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="rZW25maPf" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f6d2e6d656469612d616d617a6f6e2e636f6d2f696d616765732f492f35317a554a2b2d546a55532e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase">A Wild Sheep Chase</a></li>
+                <li>Murakami. Always. The Rat. Always</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="zvRGR7aMJ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780679733782.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Woman_in_the_Dunes">The Woman in the Dunes</a></li>
+                <li>Amazingly written, makes you feel so desperate</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="Su4Ju06-w" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9788936433598.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Vegetarian">The Vegetarian</a></li>
+                <li>Disturbing and beautiful. I will read it again</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="yk017W1Yp" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780688163525.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://philosophynow.org/issues/71/The_Importance_of_Living_by_Lin_Yutang">The Importance of Living</a> </li>
+                <li>Good but not great. Part of <a href="/The_Garden.html">The Garden</a>'s Library</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="Ks3ZS10C8" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780811228855.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.amazon.com/Factory-Hiroko-Oyamada/dp/0811228851">The Factory</a></li>
+                <li>A bit Murakami-sh, surreal and metodic</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="VcH5pqX-M" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780340739761.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Number9dream">Number9Dream: A Novel</a></li>
+                <li>Dropped at the begin. Couldn't get into it</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="oTXU-LdhI" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781729330883.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.amazon.com/Zen-Forth-Language-EFORTH-Instruments/dp/1729330886">Zen and the Forth Language</a></li>
+                <li>A bit of a weird book. Dropped it in the middle</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="tv7PqHle4" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781683242635.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Wayward_Pines_Trilogy">Pines</a> </li>
+                <li>Fun, but didn't liked the end</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="ggZjLWiQB" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781508503736.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Decagon_House_Murders">The Decagon House Murders</a></li>
+                <li>Classic honkaku mystery. Very good</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="13ETO-AV1" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f63646e2e6b6576696e6d617363686b652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032312f30332f31313030323330332f4177616b656e2d4f6e6c696e652d332d45766f6c7574696f6e2d4c415247452d3130323478313533362e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://travisbagwell.com/">Awaken Online: Evolution</a></li>
+                <li>Another simple and easy to read MMORPG romp</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="oap2fMSy0" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f63646e2e6b6576696e6d617363686b652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032312f30332f31313030323234372f4177616b656e2d4f6e6c696e652d322e352d5265747269627574696f6e2d4c415247452d3130323478313533362e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://travisbagwell.com/">Awaken Online: Retribution</a></li>
+                <li>Another simple and easy to read MMORPG romp</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="MtojM-rSr"><h3>June </h3>
-<ul><li id="aZh_PVQy1"><p><span class="rm-bold">bookcover:</span> 9781543196405</p>
-<ul><li id="XFWqQSZNm"><p><a href="https://travisbagwell.com/">Awaken Online: Precipice</a></p>
-<ul><li id="ot0CVL496"><p></p>
-</li></ul></li></ul></li>
-<li id="2E_T637fx"><p><span class="rm-bold">bookcover:</span> 9781718324008</p>
-<ul><li id="-IPZg7ZMr"><p><a href="https://global.bookwalker.jp/de5939bf2d-297b-4904-9f28-f74af8fe5b7a/lazy-dungeon-master-volume-1/">Lazy Dungeon Master: Volume 1</a></p>
-<ul><li id="dh2KOWB5W"><p></p>
-</li></ul></li></ul></li>
-<li id="NaPWF0iD9"><p><span class="rm-bold">bookcover:</span> 9780312424091</p>
-<ul><li id="fX5OwNhQf"><p><a href="https://www.thriftbooks.com/w/housekeeping-by-marilynne-robinson/250006/#edition=1888451&amp;idiq=3820600">Housekeeping</a> ☩</p>
-<ul><li id="vv8QcFv9t"><p></p>
-</li></ul></li></ul></li>
-<li id="a8vJAeR1B"><p><span class="rm-bold">bookcover:</span> 9780399563874</p>
-<ul><li id="WAaU8B5oL"><p><a href="https://www.kirkusreviews.com/book-reviews/drew-magary/the-hike-magary/">The Hike</a></p>
-<ul><li id="lC5I1cryK"><p></p>
-</li></ul></li></ul></li>
-<li id="2liYr2yMG"><p><span class="rm-bold">bookcover:</span> 9780525478188</p>
-<ul><li id="iiMFddufI"><p><a href="https://en.wikipedia.org/wiki/Paper_Towns">Paper Towns</a></p>
-<ul><li id="nfTdm_LWN"><p></p>
-</li></ul></li></ul></li>
-<li id="-qVcfro_1"><p><span class="rm-bold">bookcover:</span> 9781541093942</p>
-<ul><li id="u9qvy2U8F"><p><a href="https://www.goodreads.com/en/book/show/35139369-below">Below</a></p>
-<ul><li id="STrUTNjJS"><p></p>
-</li></ul></li></ul></li>
-<li id="VNoSFmETX"><p><span class="rm-bold">bookcover:</span> 9781641293945</p>
-<ul><li id="fegYah9ES"><p><a href="https://www.penguinrandomhouse.com/books/598484/lady-joker-volume-1-by-kaoru-takamura/">Lady Joker Volume 1</a> ‡</p>
-<ul><li id="zrmrESRPP"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="aZh_PVQy1" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f7374617469632e77696b69612e6e6f636f6f6b69652e6e65742f6177616b656e6f6e6c696e652f696d616765732f362f36662f414f325f436f7665722e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://travisbagwell.com/">Awaken Online: Precipice</a></li>
+                <li>Another simple and easy to read MMORPG romp</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="2E_T637fx" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781718324008.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://global.bookwalker.jp/de5939bf2d-297b-4904-9f28-f74af8fe5b7a/lazy-dungeon-master-volume-1/">Lazy Dungeon Master: Volume 1</a></li>
+                <li>Not that fun</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="NaPWF0iD9" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780312424091.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.thriftbooks.com/w/housekeeping-by-marilynne-robinson/250006/#edition=1888451&amp;idiq=3820600">Housekeeping</a></li>
+                <li>Didn't really pulled me in</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="a8vJAeR1B" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780399563874.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.kirkusreviews.com/book-reviews/drew-magary/the-hike-magary/">The Hike</a></li>
+                <li>Crazy and surreal. I dig it</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="2liYr2yMG" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780525478188.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Paper_Towns">Paper Towns</a></li>
+                <li>No no no</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="-qVcfro_1" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781541093942.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.goodreads.com/en/book/show/35139369-below">Below</a></li>
+                <li>One of the best dungeon crawling books I ever read</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="VNoSFmETX" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781641293945.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.penguinrandomhouse.com/books/598484/lady-joker-volume-1-by-kaoru-takamura/">Lady Joker Volume 1</a></li>
+                <li>So so so good. So Japanese. Can't wait to read it again when Volume 2 gets released.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="NLg2iDYUG"><h3>May</h3>
-<ul><li id="Cg2IbQBgB"><p><span class="rm-bold">bookcover:</span> 9781613834718</p>
-<ul><li id="V3giAUwTi"><p><a href="https://en.wikipedia.org/wiki/The_Big_Sleep">The Big Sleep</a></p>
-<ul><li id="DsHQued2j"><p></p>
-</li></ul></li></ul></li>
-<li id="qRZC03FEj"><p><span class="rm-bold">bookcover:</span> 9780473418465</p>
-<ul><li id="tYwEfAJen"><p><a href="https://www.amazon.com/dp/B077CJN6N3/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">The Stoic Body</a> ☩</p>
-<ul><li id="W5jwup4tq"><p></p>
-</li></ul></li></ul></li>
-<li id="bOJZuf-1Q"><p><span class="rm-bold">bookcover:</span> 9780802129628</p>
-<ul><li id="2e4NH1KjB"><p><a href="https://groveatlantic.com/book/convenience-store-woman/">Convenience Store Woman</a></p>
-<ul><li id="SYdxRyNYv"><p></p>
-</li></ul></li></ul></li>
-<li id="r4UB5NgxP"><p><span class="rm-bold">bookcover:</span> 9781950259397</p>
-<ul><li id="NMF_-QDP0"><p><a href="https://deathsheadpress.com/blogs/news/sweet-evil-by-charles-michael-platt">Sweet Evil</a></p>
-<ul><li id="ez1IJjBR3"><p></p>
-</li></ul></li></ul></li>
-<li id="i6I_ETO5p"><p><span class="rm-bold">bookcover:</span> 9780473545505</p>
-<ul><li id="IuaOX8uVE"><p><a href="https://thedeepdish.org/optionality-book/">Optionality: How to Survive and Thrive in a Volatile World</a></p>
-<ul><li id="sK9UbVCu-"><p></p>
-</li></ul></li></ul></li>
-<li id="Q8VSY73-V"><p><span class="rm-bold">bookcover:</span> 9780446695664</p>
-<ul><li id="2T42EATHh"><p><a href="http://www.carlhiaasen.com/book-detail.shtml?bid=23">Double Whammy</a></p>
-<ul><li id="upRFuutER"><p></p>
-</li></ul></li></ul></li>
-<li id="JUG_ACfHE"><p><span class="rm-bold">bookcover:</span> 9780593318072</p>
-<ul><li id="i47B8bZ7Z"><p><a href="https://bookshop.org/books/first-person-singular-stories-9780593396544/9780593318072?aid=71">First Person Singular: Stories</a></p>
-<ul><li id="POqYXbCNF"><p></p>
-</li></ul></li></ul></li>
-<li id="_Luiky3nr"><p><span class="rm-bold">bookcover:</span> 9780142410707</p>
-<ul><li id="dBaTjCfYD"><p><a href="https://www.johngreenbooks.com/an-abundance-of-katherines/">An Abundance of Katherines Book</a></p>
-<ul><li id="oir3tmAwf"><p></p>
-</li></ul></li></ul></li>
-<li id="__XWSLt02"><p><span class="rm-bold">bookcover:</span> !<a href="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563468943l/49676965._SX318_SY475_.jpg">https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563468943l/49676965._SX318_SY475_.jpg</a></p>
-<ul><li id="IkN0BCTnz"><p><a href="https://arefugefromlife.wordpress.com/2020/01/06/summer-frost-by-blake-crouch-review/">Summer Frost</a></p>
-<ul><li id="dFYzmm79G"><p></p>
-</li></ul></li></ul></li>
-<li id="mzaNnmEVL"><p><span class="rm-bold">bookcover:</span> 9781477823071</p>
-<ul><li id="5cRmbchXk"><p><a href="https://jamesg.blog/2021/04/06/the-great-passage-book-review">The Great Passage</a></p>
-<ul><li id="-nHK62TcB"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="Cg2IbQBgB" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781613834718.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/The_Big_Sleep">The Big Sleep</a></li>
+                <li>Had fun with this one. Oldschool hardboiled fiction</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="qRZC03FEj" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780473418465.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.amazon.com/dp/B077CJN6N3/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">The Stoic Body</a></li>
+                <li>Meh. </li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="bOJZuf-1Q" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780802129628.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://groveatlantic.com/book/convenience-store-woman/">Convenience Store Woman</a></li>
+                <li>Amazing <a href="/Japanese_books_about_nothing.html">Japanese books about nothing</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="r4UB5NgxP" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f532f636f6d707265737365642e70686f746f2e676f6f6472656164732e636f6d2f626f6f6b732f31363135373730353035692f35373431313132322e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://deathsheadpress.com/blogs/news/sweet-evil-by-charles-michael-platt">Sweet Evil</a></li>
+                <li>Trying to be a shocker, but in the end it's only a bore</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="i6I_ETO5p" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780473545505.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://thedeepdish.org/optionality-book/">Optionality: How to Survive and Thrive in a Volatile World</a></li>
+                <li>Lovely. Really liked it</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="Q8VSY73-V" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780446695664.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="http://www.carlhiaasen.com/book-detail.shtml?bid=23">Double Whammy</a></li>
+                <li>I like anything written by Carl Hiaasen. Always light and fun</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="JUG_ACfHE" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780593318072.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/first-person-singular-stories-9780593396544/9780593318072?aid=71">First Person Singular: Stories</a></li>
+                <li>Murakami, my favorite author — will read and re-read forever</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="_Luiky3nr" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780142410707.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.johngreenbooks.com/an-abundance-of-katherines/">An Abundance of Katherines Book</a></li>
+                <li>John green is a book generator based in a single template</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="__XWSLt02" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f692e67722d6173736574732e636f6d2f696d616765732f532f636f6d707265737365642e70686f746f2e676f6f6472656164732e636f6d2f626f6f6b732f313536333436383934336c2f34393637363936352e5f53583331385f53593437355f2e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://arefugefromlife.wordpress.com/2020/01/06/summer-frost-by-blake-crouch-review/">Summer Frost</a></li>
+                <li>Simple novella with I Robot feels</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="mzaNnmEVL" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781477823071.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://jamesg.blog/2021/04/06/the-great-passage-book-review">The Great Passage</a></li>
+                <li>Simple masterwork. Will read again</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="ClMLfFtI-"><h3>April</h3>
-<ul><li id="V5yPj_zop"><p><span class="rm-bold">bookcover:</span> !<a href="https://assets.lulu.com/cover_thumbs/1/k/1kkj8wve-front-shortedge-384.jpg">https://assets.lulu.com/cover_thumbs/1/k/1kkj8wve-front-shortedge-384.jpg</a></p>
-<ul><li id="BarhYlw6Q"><p><a href="https://www.lulu.com/en/us/shop/yoshino-sakamoto/hidekis-flying-toilet-invention/paperback/product-1kkj8wve.html?page=1&amp;pageSize=4">Hideki&#39;s Flying Toilet Invention and Other Stories</a></p>
-<ul><li id="AGoKFeuw3"><p></p>
-</li></ul></li></ul></li>
-<li id="gQ73Mm02m"><p><span class="rm-bold">bookcover:</span> 9781794711525</p>
-<ul><li id="zPpB-ul5q"><p><a href="https://www.lulu.com/en/us/shop/kris-de-decker/low-tech-magazine-2007-2012/paperback/product-1z742pek.html?page=1&amp;pageSize=4">Low-Tech Magazine 2007-2012</a> ☩</p>
-<ul><li id="9T37n5607"><p></p>
-</li></ul></li></ul></li>
-<li id="jd72ywgos"><p><span class="rm-bold">bookcover:</span> 9781250303547</p>
-<ul><li id="NmLTTz-50"><p><a href="https://www.newyorker.com/books/second-read/the-virgin-suicides-still-holds-the-mysteries-of-adolescence">The Virgin Suicides</a> ‡</p>
-<ul><li id="W1L0N1zYx"><p></p>
-</li></ul></li></ul></li>
-<li id="WPmfc7AUt"><p><span class="rm-bold">bookcover:</span> 9780375725807</p>
-<ul><li id="-OJwj6ObF"><p><a href="https://www.harukimurakami.com/book/underground-the-tokyo-gas-attack-and-the-japanese-psyche">Underground: The Tokyo Gas Attack and the Japanese Psyche</a> ☩</p>
-<ul><li id="tdydcD9Et"><p></p>
-</li></ul></li></ul></li>
-<li id="mhH-h9IEf"><p><span class="rm-bold">bookcover:</span> 9780990990086</p>
-<ul><li id="fmQj-F-tY"><p><a href="https://dmrbooks.com/death-dealers-diabolists">Death Dealers and Diabolists</a> ☩</p>
-<ul><li id="7nF6hKd2Q"><p></p>
-</li></ul></li></ul></li>
-<li id="RJNavHEK6"><p><span class="rm-bold">bookcover:</span> 9781250074805</p>
-<ul><li id="MlEPmuwRP"><p><a href="https://bookshop.org/books/jesus-son-9780312428747/9781250074805">Jesus&#39;s Son</a></p>
-<ul><li id="ECzYza02x"><p></p>
-</li></ul></li></ul></li>
-<li id="UkjJxyowe"><p><span class="rm-bold">bookcover:</span> 9780593189580</p>
-<ul><li id="p8YSJWujh"><p><a href="https://bookshop.org/books/no-one-is-talking-about-this/9780593189580">No One Is Talking About This: A Novel</a> ☩</p>
-<ul><li id="AYxTIa-5E"><p></p>
-</li></ul></li></ul></li>
-<li id="z05T3kZUb"><p><span class="rm-bold">bookcover:</span> 9781988575063</p>
-<ul><li id="jpJwCC6SN"><p><a href="https://sive.rs/n">Hell Yeah or No</a> ‡</p>
-<ul><li id="dP0r-T6mL"><p></p>
-</li></ul></li></ul></li>
-<li id="682VjCAsY"><p><span class="rm-bold">bookcover:</span> 9781501124020</p>
-<ul><li id="BDQQjNdkg"><p><a href="https://www.principles.com/">Principes</a> ☩</p>
-<ul><li id="S4Y2m1Shc"><p></p>
-</li></ul></li></ul></li>
-<li id="EMellcPNy"><p><span class="rm-bold">bookcover:</span> 9780679750536</p>
-<ul><li id="3bXyIBezr"><p><a href="https://www.harukimurakami.com/book/the-elephant-vanishes-stories">The Elephant Vanishes</a> ‡</p>
-<ul><li id="vBJbVro8l"><p></p>
-</li></ul></li></ul></li>
-<li id="jHzgY3O5s"><p><span class="rm-bold">bookcover:</span> 9780525428022</p>
-<ul><li id="XC-DuaAG1"><p><a href="https://www.johngreenbooks.com/looking-for-alaska">Looking for Alaska</a></p>
-<ul><li id="TzMcvfx-_"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="V5yPj_zop" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f6173736574732e6c756c752e636f6d2f636f7665725f7468756d62732f312f6b2f316b6b6a387776652d66726f6e742d73686f7274656467652d3338342e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.lulu.com/en/us/shop/yoshino-sakamoto/hidekis-flying-toilet-invention/paperback/product-1kkj8wve.html?page=1&amp;pageSize=4">Hideki's Flying Toilet Invention and Other Stories</a></li>
+                <li>Crazy and forgetable</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="gQ73Mm02m" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781794711525.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.lulu.com/en/us/shop/kris-de-decker/low-tech-magazine-2007-2012/paperback/product-1z742pek.html?page=1&amp;pageSize=4">Low-Tech Magazine 2007-2012</a> </li>
+                <li>A bit of a bore. Good to unwind</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="jd72ywgos" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781250303547.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.newyorker.com/books/second-read/the-virgin-suicides-still-holds-the-mysteries-of-adolescence">The Virgin Suicides</a></li>
+                <li>Amazing book. Felt a lot of different emotions through it, mostly of them unpleasant.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="WPmfc7AUt" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780375725807.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.harukimurakami.com/book/underground-the-tokyo-gas-attack-and-the-japanese-psyche">Underground: The Tokyo Gas Attack and the Japanese Psyche</a></li>
+                <li>Not ready for it. But always good</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="mhH-h9IEf" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780990990086.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://dmrbooks.com/death-dealers-diabolists">Death Dealers and Diabolists</a> </li>
+                <li>Not the best Sword And Sorcery Books</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="RJNavHEK6" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781250074805.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/jesus-son-9780312428747/9781250074805">Jesus's Son</a></li>
+                <li>Really fun and crazy</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="UkjJxyowe" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780593189580.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/no-one-is-talking-about-this/9780593189580">No One Is Talking About This: A Novel</a> </li>
+                <li>Too short. Really fun</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="z05T3kZUb" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f736976652e72732f696d616765732f446572656b5369766572732d636f7665722d48656c6c596561684f724e6f2d343030783634302e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://sive.rs/n">Hell Yeah or No</a></li>
+                <li>Derek is one of my favorite non-fiction authors. This one is a classic</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="682VjCAsY" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781501124020.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.principles.com/">Principes</a></li>
+                <li>Good, but too repetitive. Read a summary.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="EMellcPNy" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780679750536.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.harukimurakami.com/book/the-elephant-vanishes-stories">The Elephant Vanishes</a> </li>
+                <li>More Murakami. Always good</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="jHzgY3O5s" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780525428022.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://www.johngreenbooks.com/looking-for-alaska">Looking for Alaska</a></li>
+                <li>John green is a book generator based in a single template</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="YxoDoqQTz"><h3>March</h3>
-<ul><li id="NBqjBG9Es"><p><span class="rm-bold">bookcover:</span> 9781735898209</p>
-<ul><li id="WBiCTOADU"><p><a href="https://dmrbooks.com/the-godblade">The Godblade</a> ☩</p>
-<ul><li id="24W1lZfte"><p></p>
-</li></ul></li></ul></li>
-<li id="eClZ2hxJQ"><p><span class="rm-bold">bookcover:</span> 9780525536550</p>
-<ul><li id="enqAL55Zh"><p><a href="https://bookshop.org/books/a-world-without-email-reimagining-work-in-an-age-of-communication-overload/9780525536550">A World Without Email: Reimagining Work in an Age of Communication Overload</a> ☩</p>
-<ul><li id="QL6-qPjxg"><p></p>
-</li></ul></li></ul></li>
-<li id="ULnY3tFFQ"><p><span class="rm-bold">bookcover:</span> 9781984824738</p>
-<ul><li id="nBDvyAGDL"><p><a href="https://bookshop.org/books/do-nothing-how-to-break-away-from-overworking-overdoing-and-underliving/9781984824738">Do Nothing: Break Away from Overworking, Overdoing, and Underliving</a></p>
-<ul><li id="-yft6Lnmi"><p></p>
-</li></ul></li></ul></li>
-<li id="J7zbA966i"><p><span class="rm-bold">bookcover:</span> 9780131103627</p>
-<ul><li id="HFe1o5WA1"><p><a href="https://bookshop.org/books/c-programming-language-9780131103627/9780131103627">The C Programming Language 2nd edition</a> ‡ ∞</p>
-<ul><li id="n7qiA-MI5"><p></p>
-</li></ul></li></ul></li>
-<li id="OaTJrjs_n"><p><span class="rm-bold">bookcover:</span> !<a href="https://assets.lulu.com/cover_thumbs/r/q/rqgmdj-front-shortedge-384.jpg">https://assets.lulu.com/cover_thumbs/r/q/rqgmdj-front-shortedge-384.jpg</a></p>
-<ul><li id="1LbLdQV3p"><p><a href="https://hundredrabbits.itch.io/busy-doing-nothing">Busy Doing Nothing</a> ‡</p>
-<ul><li id="06tS6B4JP"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="NBqjBG9Es" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f6d2e6d656469612d616d617a6f6e2e636f6d2f696d616765732f492f3531384b4536357167754c2e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://dmrbooks.com/the-godblade">The Godblade</a></li>
+                <li>Boring. Not selected for Sword And Sorcery Books</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="eClZ2hxJQ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780525536550.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/a-world-without-email-reimagining-work-in-an-age-of-communication-overload/9780525536550">A World Without Email</a></li>
+                <li>I don't want a world without Email. I prefer to drop the Zoom calls</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="ULnY3tFFQ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781984824738.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/do-nothing-how-to-break-away-from-overworking-overdoing-and-underliving/9781984824752">Do Nothing: Break Away from Overworking, Overdoing, and Underliving</a></li>
+                <li>More of the same advice</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="J7zbA966i" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780131103627.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/c-programming-language-9780131103627/9780131103627">The C Programming Language 2nd edition</a></li>
+                <li>A classic. Rereading it</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="OaTJrjs_n" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f6173736574732e6c756c752e636f6d2f636f7665725f7468756d62732f722f712f7271676d646a2d66726f6e742d73686f7274656467652d3338342e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://hundredrabbits.itch.io/busy-doing-nothing">Busy Doing Nothing</a></li>
+                <li>Lovely trip log. Good daily meditation.</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="NFmGZSm6g"><h3>February</h3>
-<ul><li id="YPGnM-UQ-"><p><span class="rm-bold">bookcover:</span> 9781476784724</p>
-<ul><li id="ofDwy4aVQ"><p><a href="https://bookshop.org/books/the-art-of-stillness-adventures-in-going-nowhere/9781476784724">The Art of Stillness: Adventures in Going Nowhere</a> </p>
-<ul><li id="q38Tq5hFT"><p></p>
-</li></ul></li></ul></li>
-<li id="9TWxIfxjZ"><p><span class="rm-bold">bookcover:</span> 9780062874788</p>
-<ul><li id="KQHp15eDq"><p><a href="https://bookshop.org/books/it-doesn-t-have-to-be-crazy-at-work/9780062874788">It doesn&#39;t have to be crazy at work</a> ‡ ∞</p>
-<ul><li id="8RIwl1KDO"><p></p>
-</li></ul></li></ul></li>
-<li id="eeOwqb99A"><p><span class="rm-bold">bookcover:</span> 9780993538735</p>
-<ul><li id="_mHkoFI02"><p><a href="https://bookshop.org/books/small-pleasures/9780993538735">Small pleasures (the school of life library)</a> ‡</p>
-<ul><li id="E0EnRPGK_"><p></p>
-</li></ul></li></ul></li></ul></li>
+<ul>
+        <li id="YPGnM-UQ-" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781476784724.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-art-of-stillness-adventures-in-going-nowhere/9781476784724">The Art of Stillness: Adventures in Going Nowhere</a> </li>
+                <li>More of the same advice</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="9TWxIfxjZ" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780062874788.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/it-doesn-t-have-to-be-crazy-at-work/9780062874788">It doesn't have to be crazy at work</a> </li>
+                <li>Classic, very inspiring</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="eeOwqb99A" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780993538735.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/small-pleasures/9780993538735">Small pleasures (the school of life library)</a></li>
+                <li>One of the best books of the year. Must re-read it often</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li>
 <li id="xY2gdBtLJ"><h3>January</h3>
-<ul><li id="MOBeRQ_3W"><p><span class="rm-bold">bookcover:</span> 9781733408691</p>
-<ul><li id="vpVaDE9GV"><p><a href="https://dmrbooks.com/necromancy-in-nilztiria">Necromancy in Nilztiria</a> ‡ </p>
-<ul><li id="fwTqKOxwh"><p></p>
-</li></ul></li></ul></li>
-<li id="x35DFjnWO"><p><span class="rm-bold">bookcover:</span> 9780865478015</p>
-<ul><li id="E_MFn6FET"><p><a href="https://bookshop.org/books/the-antidote-happiness-for-people-who-can-t-stand-positive-thinking/9780865478015">The Antidote: Happiness for People Who Can&#39;t Stand Positive Thinking</a> ‡ ∞</p>
-<ul><li id="X8zrCRY0A"><p></p>
-</li></ul></li></ul></li>
-<li id="ggimopXn2"><p><span class="rm-bold">bookcover:</span> 9781483405117</p>
-<ul><li id="zv7SbRWjs"><p><a href="https://bookshop.org/books/drinking-to-distraction/9781483405117">Drinking to distraction</a></p>
-<ul><li id="mFTh7-QD1"><p></p>
-</li></ul></li></ul></li></ul></li></ul></li>
-<li id="yD07bXJS7"><p><hr></p>
-</li>
-<li id="a5OoKC4Ia"><p><span class="rm-bold">Colophon</span></p>
-<ul><li id="mZC-0Fpl8"><p>‡ — favorite</p>
-</li>
-<li id="QaGkOu7yF"><p>∞ — re-read</p>
-</li>
-<li id="N8txqG3cC"><p>☩ — dropped</p>
-</li></ul></li></ul>
+<ul>
+        <li id="MOBeRQ_3W" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/68747470733a2f2f6d2e6d656469612d616d617a6f6e2e636f6d2f696d616765732f492f353135724c6e447539324c2e5f41435f53593738305f2e6a7067.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://dmrbooks.com/necromancy-in-nilztiria">Necromancy in Nilztiria</a> ‡ </li>
+                <li>One of the best Sword And Sorcery Books</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="x35DFjnWO" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9780865478015.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/the-antidote-happiness-for-people-who-can-t-stand-positive-thinking/9780865478015">The Antidote: Happiness for People Who Can't Stand Positive Thinking</a> ‡ ∞</li>
+                <li>Lovely addition to <a href="/The_Garden.html">The Garden</a></li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      
+
+        <li id="ggimopXn2" style="display: inline;" lazy="loaded">
+          <div class="cover">
+            <img src="covers/9781483405117.jpg">
+            
+            <div class="tooltip">
+              <ul>
+                <li><a href="https://bookshop.org/books/drinking-to-distraction/9781483405117">Drinking to distraction</a></li>
+                <li>Good quit-lit</li>
+              </ul>    
+            </div>
+          </div>
+        </li>
+      </ul></li></ul></li></ul>
       </article>
     </section>
     <section class="references">
 		<header>
         	<h3>Page References</h3>
-            <button 
-              aria-label="Pages (on this website) that links to this"
-              role="tooltip" 
-              data-microtip-position="top-left"
-              data-microtip-size="medium"
-              class="button"
-              >?</button>
+            <button aria-label="Pages (on this website) that links to this" role="tooltip" data-microtip-position="top-left" data-microtip-size="medium" class="button">?</button>
       </header>
       <ul>
-        <li><a href="Website_Drafts.html" data-reference="Website Drafts">Website Drafts</a></li>
+        <li><a href="Website_Changelog.html" data-reference="Website Changelog">Website Changelog</a></li>
+<li><a href="Trip202211USA.html" data-reference="Trip/2022/11/USA">Trip/2022/11/USA</a></li>
+<li><a href="2021.html" data-reference="2021">2021</a></li>
+<li><a href="A_scale_to_rule_them_all.html" data-reference="A scale to rule them all">A scale to rule them all</a></li>
+<li><a href="Books.html" data-reference="Books">Books</a></li>
       </ul>
     </section>
     <footer>
-      <a href="https://merveilles.town/@caffo">Fedi</a>
       <a href="https://webring.xxiivv.com/#random" target="_blank">Webring</a>
       <a href="/Website_Changelog.html">Changelog</a>
       <a href="/How_is_this_website_made.html">How?</a>
     </footer>
     <script src="/painter.js"></script>
    	<script src="/references.js"></script>
-  </body>
-</html>
+  
+
+</body></html>
