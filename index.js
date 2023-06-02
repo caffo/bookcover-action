@@ -399,11 +399,6 @@ async function updateSourceFile(file, markup) {
 					ul>li>ul>li .cover .tooltip li {
 						padding: 0;
 					}
-					
-					.pinned {
-							font-size: 18px;
-						line-height: 1.4;
-					}
 
 				}
 				
