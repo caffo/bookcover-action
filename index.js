@@ -70,7 +70,7 @@ async function getBooksData(entries) {
     return {
       node: $(this).attr('id'),
       isbn: $(this).children('p:has(span:contains("bookcover:")):not(:contains("!"))').text().replace('bookcover: ', '').trim(),
-      title: $(this).find('p:not(:has(span)):has(a)').first().html(),
+      title: $(this).find('p').first().html(),
       comment: $(this).find('ul > li > ul > li > p').html(),
       cover: '',
       alternative: $(this).children('p:has(span:contains("bookcover:")):contains("!")').text().replace('bookcover: !', '').trim(),
@@ -306,7 +306,7 @@ async function updateSourceFile(file, markup) {
 					margin: 0;
 				}
 
-				.cover>.tooltip>ul>li:first-child a{
+				.cover>.tooltip>ul>li:first-child {
 					font-size: 19px;
 					font-weight: bold;
 				}
@@ -345,7 +345,7 @@ async function updateSourceFile(file, markup) {
 						margin: -40px 0 0 0;
 					}
 					
-					.cover>.tooltip>ul>li:first-child a {
+					.cover>.tooltip>ul>li:first-child {
 						font-size: 18px;
 						width: 100%;
 						line-height: 1.2;
@@ -382,7 +382,7 @@ async function updateSourceFile(file, markup) {
 
 				@media screen and (max-width: 767px)
 				{
-					.cover>.tooltip>ul>li a {
+					.cover>.tooltip>ul>li:first-child {
 						font-size: 16px;
 					}
 
